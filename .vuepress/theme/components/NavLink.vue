@@ -15,7 +15,9 @@
     :class="{
       'nav-link': true,
       'router-link-active':
-        link.indexOf(docType) !== -1 && link.indexOf(domain) !== -1 && link.indexOf('development/resource') === -1,
+        link.indexOf(docsType) !== -1 &&
+        link.indexOf(domain) !== -1 &&
+        link.indexOf('development/resource') === -1,
     }"
   >
     {{ item.text }}
@@ -78,8 +80,8 @@ export default {
       return false
     },
 
-    docType() {
-      return this.$themeConfig.gitHubConfig[this.$lang].docType
+    docsType() {
+      return this.$themeConfig.gitHubConfig[this.$lang].docsType
     },
 
     domain() {

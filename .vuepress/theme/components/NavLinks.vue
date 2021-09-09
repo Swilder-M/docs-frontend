@@ -65,7 +65,7 @@ export default {
           items: Object.keys(locales).map(path => {
             const locale = locales[path]
             const text = (themeLocales[path] && themeLocales[path].label) || locale.lang
-            const products = this.$themeConfig.gitHubConfig[this.$lang].docType
+            const products = this.$themeConfig.gitHubConfig[this.$lang].docsType
             let link
             if (path === '/en/') {
               link = `https://docs.emqx.io/en/${products}/latest/`

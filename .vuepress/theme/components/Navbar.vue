@@ -110,7 +110,7 @@ export default {
     },
 
     langLink() {
-      const products = this.$themeConfig.gitHubConfig[this.$lang].docType
+      const products = this.$themeConfig.gitHubConfig[this.$lang].docsType
       return `/${products}/latest/`
     },
   },

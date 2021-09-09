@@ -1,11 +1,26 @@
 const navConfig = require('./config/navConfig')
 const footerConfig = require('./config/footerConfig')
-const gitHubConfig = require('./config/githubConfig.json')
-const directory = require('./config/directory.json')
+const gitHubConfig = require('./config/githubConfig')
 const { containerBlock, containerInlineBlock } = require('./theme/util/containers')
 const { removePlugin, PLUGINS } = require('@vuepress/markdown')
 const fs = require('fs')
 const { path } = require('@vuepress/shared-utils')
+
+let directory
+if (process.env.NODE_ENV === 'production') {
+  directory = require('./config/directory.json')
+} else {
+  const product = process.env.DOCS_TYPE
+  switch (product) {
+    case 'emqx':
+      directory = require('../emqx/directory.json')
+      directory.cn = { '/emqx/zh_CN/': directory.cn }
+      directory.en = { '/emqx/en_US/': directory.en }
+      break
+    default:
+      directory = require('../emqx/directory.json')
+  }
+}
 
 module.exports = {
   host: 'localhost',

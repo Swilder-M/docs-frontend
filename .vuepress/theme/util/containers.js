@@ -1,4 +1,4 @@
-const gitHubConfig = require('../../config/githubConfig.json')
+const gitHubConfig = require('../../config/githubConfig')
 const isEnterprise = gitHubConfig.cn.isEnterprise
 
 const START_EMQX_CE = '{% emqxce %}'

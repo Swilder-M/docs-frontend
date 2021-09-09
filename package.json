@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vuepress dev",
+    "dev:emqx": "export DOCS_TYPE=emqx && vuepress dev",
     "build": "vuepress build && node .vuepress/minify.js",
     "pdf": "vuepress export"
   },

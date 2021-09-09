@@ -41,19 +41,19 @@ export default {
     currentVersion() {
       return this.gitHubConfig.version
     },
-    docType() {
-      const { docType } = this.gitHubConfig
-      return docType
+    docsType() {
+      const { docsType } = this.gitHubConfig
+      return docsType
     },
     versionLink() {
       const { path } = this.$localeConfig
-      return `${path}${this.docType}/`
+      return `${path}${this.docsType}/`
     },
   },
 
   methods: {
     async getVersions() {
-      const currentDocType = this.$themeConfig.gitHubConfig[this.$lang].docType
+      const currentDocType = this.$themeConfig.gitHubConfig[this.$lang].docsType
       const { status, data } = await this.$axios.get(
         `https://docs.emqx.io/api/${currentDocType}_versions`,
       )
