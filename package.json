@@ -4,10 +4,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev",
-    "dev:emqx": "export DOCS_TYPE=emqx && vuepress dev",
-    "build": "vuepress build && node .vuepress/minify.js",
-    "pdf": "vuepress export"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs && node docs/.vuepress/minify.js",
+    "pdf": "vuepress export docs"
   },
   "devDependencies": {
     "@snowdog/vuepress-plugin-pdf-export": "^1.1.0",
