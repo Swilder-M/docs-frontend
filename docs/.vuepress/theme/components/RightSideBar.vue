@@ -14,15 +14,11 @@
     </div>
     <section class="doc-toc">
       <div class="title">
-        {{ $lang === 'cn' ? '本页导航' : 'What’s on this page' }}
+        {{ $lang === 'zh' ? '本页导航' : 'What’s on this page' }}
       </div>
       <div class="toc-content">
         <ul>
-          <li
-            v-for="(header, index) in docToc"
-            :key="index"
-            :class="{ 'is-active': tocActive === '#' + header.slug }"
-          >
+          <li v-for="(header, index) in docToc" :key="index" :class="{ 'is-active': tocActive === '#' + header.slug }">
             <router-link :to="'#' + header.slug">
               {{ header.title }}
             </router-link>
@@ -38,8 +34,7 @@ export default {
   name: 'RightSideBar',
   computed: {
     gitHubConfig() {
-      const gitHubConfig =
-        this.$lang === 'cn' ? this.$themeConfig.gitHubConfig.cn : this.$themeConfig.gitHubConfig.en
+      const gitHubConfig = this.$lang === 'zh' ? this.$themeConfig.gitHubConfig.zh : this.$themeConfig.gitHubConfig.en
       return gitHubConfig
     },
     editLinkText() {
@@ -62,12 +57,7 @@ export default {
       const docsDir = this.gitHubConfig.docsDir
       const prefix = Object.keys(this.$themeLocaleConfig.sidebar)[0]
       const docsPath = ('/' + this.$page.relativePath).replace(prefix, '')
-      let href
-      if (this.$lang === 'cn') {
-        href = 'https://docs.emqx.cn' + this.$route.path
-      } else {
-        href = 'https://docs.emqx.io' + this.$route.path
-      }
+      let href = 'https://docs.emqx.com' + this.$route.path
       return `https://github.com/${docsRepo}/issues/new?body=File:%20[/${docsDir}/${docsPath}](${href})`
     },
     docToc() {

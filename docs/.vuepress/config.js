@@ -15,8 +15,7 @@ module.exports = {
       'meta',
       {
         name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
+        content: 'width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
       },
     ],
     ['meta', { property: 'og:site_name', content: 'docs.emqx.com' }],
@@ -72,6 +71,22 @@ module.exports = {
       },
     ],
     [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          return new Date(timestamp).toLocaleDateString()
+        },
+      },
+    ],
+    [
+      'sitemap',
+      {
+        hostname: 'https://docs.emqx.com',
+        exclude: ['/404.html'],
+        outFile: 'sitemap_docs.xml',
+      },
+    ],
+    [
       'vuepress-plugin-container',
       {
         type: 'tip',
@@ -117,7 +132,7 @@ module.exports = {
         sidebar: directory.en,
       },
       '/': {
-        lang: 'cn',
+        lang: 'zh',
         // 文档更新时间
         lastUpdated: '更新时间',
         // 多语言下拉菜单的标题
@@ -126,9 +141,9 @@ module.exports = {
         label: '中文',
         // 编辑链接文字
         editLinkText: '在 GitHub 上编辑此页',
-        nav: navConfig.cn,
+        nav: navConfig.zh,
         sidebarDepth: 1,
-        sidebar: directory.cn,
+        sidebar: directory.zh,
       },
     },
     // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
@@ -156,7 +171,7 @@ module.exports = {
       description: 'EMQ Docs',
     },
     '/': {
-      lang: 'cn',
+      lang: 'zh',
       title: 'EMQ Docs',
       description: 'EMQ 使用文档',
     },

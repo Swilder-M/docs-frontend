@@ -1,23 +1,22 @@
 module.exports = {
-  cn: [
+  zh: [
     {
       text: '文档',
       items: [
         {
           text: 'for Cloud',
           items: [
-            { text: 'Broker 文档', link: 'https://docs.emqx.cn/broker/latest/' },
-            { text: 'Enterprise 文档', link: 'https://docs.emqx.cn/enterprise/latest/' },
-            { text: 'Cloud 文档', link: 'https://docs.emqx.cn/cloud/latest/' },
-            { text: 'Fabric 文档', link: 'https://docs.emqx.cn/fabric/latest/' },
+            { text: 'EMQ X 文档', link: 'https://docs.emqx.com/zh/emqx/latest/' },
+            { text: 'Cloud 文档', link: 'https://docs.emqx.com/zh/cloud/latest/' },
+            { text: 'Fabric 文档', link: 'https://docs.emqx.com/zh/fabric/latest/' },
           ],
         },
         {
           text: 'for Edge',
           items: [
-            { text: 'Edge 文档', link: 'https://docs.emqx.cn/edge/latest/' },
-            { text: 'Kuiper 文档', link: 'https://docs.emqx.cn/kuiper/latest/' },
-            { text: 'Neuron 文档', link: 'https://docs.emqx.cn/neuron/latest/' },
+            { text: 'Edge 文档', link: 'https://docs.emqx.com/zh/edge/latest/' },
+            { text: 'Kuiper 文档', link: 'https://docs.emqx.com/zh/kuiper/latest/' },
+            { text: 'Neuron 文档', link: 'https://docs.emqx.com/zh/neuron/latest/' },
           ],
         },
       ],
@@ -37,7 +36,7 @@ module.exports = {
         { text: 'MQTT 5', link: 'https://www.emqx.com/zh/mqtt/mqtt5' },
         {
           text: 'MQTT 客户端',
-          link: 'https://docs.emqx.cn/broker/latest/development/resource.html',
+          link: 'https://docs.emqx.com/zh/emqx/latest/development/resource.html',
         },
         { text: 'MQTT 测试', link: 'https://www.emqx.com/zh/testing' },
         { text: 'MQTT X', link: 'https://mqttx.app/zh' },
@@ -59,18 +58,17 @@ module.exports = {
         {
           text: 'for Cloud',
           items: [
-            { text: 'Broker', link: 'https://docs.emqx.io/en/broker/latest/' },
-            { text: 'Enterprise', link: 'https://docs.emqx.io/en/enterprise/latest/' },
-            { text: 'Cloud', link: 'https://docs.emqx.io/en/cloud/latest/' },
-            { text: 'Fabric', link: 'https://docs.emqx.io/en/fabric/latest/' },
+            { text: 'EMQ X', link: 'https://docs.emqx.com/en/emqx/latest/' },
+            { text: 'Cloud', link: 'https://docs.emqx.com/en/cloud/latest/' },
+            { text: 'Fabric', link: 'https://docs.emqx.com/en/fabric/latest/' },
           ],
         },
         {
           text: 'for Edge',
           items: [
-            { text: 'Edge', link: 'https://docs.emqx.io/en/edge/latest/' },
-            { text: 'Kuiper', link: 'https://docs.emqx.io/en/kuiper/latest/' },
-            { text: 'Neuron', link: 'https://docs.emqx.io/en/neuron/latest/' },
+            { text: 'Edge', link: 'https://docs.emqx.com/en/edge/latest/' },
+            { text: 'Kuiper', link: 'https://docs.emqx.com/en/kuiper/latest/' },
+            { text: 'Neuron', link: 'https://docs.emqx.com/en/neuron/latest/' },
           ],
         },
       ],
@@ -90,7 +88,7 @@ module.exports = {
         { text: 'MQTT 5', link: 'https://www.emqx.com/en/mqtt/mqtt5' },
         {
           text: 'MQTT Client Library',
-          link: 'https://docs.emqx.io/en/broker/latest/development/resource.html',
+          link: 'https://docs.emqx.com/en/emqx/latest/development/resource.html',
         },
         { text: 'MQTT Testing', link: 'https://www.emqx.com/en/testing' },
         { text: 'MQTT X', link: 'https://mqttx.app/' },

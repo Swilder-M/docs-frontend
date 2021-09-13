@@ -103,6 +103,13 @@ a.sidebar-link.active {
   background-color: rgba(34, 187, 122, 0.1) !important;
   padding-left: 6px !important;
 }
+a.sidebar-link.is-enterprise {
+  position: relative;
+  &::after {
+    content: '企业版';
+    color: blue;
+  }
+}
 .sidebar .sidebar-sub-headers {
   .sidebar-sub-header {
     a {
@@ -493,6 +500,7 @@ div[class*='language-'].line-numbers-mode {
           display: block !important;
         }
         .version-dropdown {
+          z-index: 1;
           width: 125px;
           display: none;
           position: absolute;

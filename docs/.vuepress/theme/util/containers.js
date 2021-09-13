@@ -1,5 +1,5 @@
 const gitHubConfig = require('../../config/githubConfig')
-const isEnterprise = gitHubConfig.cn.isEnterprise
+const isEnterprise = gitHubConfig.zh.isEnterprise
 
 const START_EMQX_CE = '{% emqxce %}'
 const END_EMQX_CE = '{% endemqxce %}'
@@ -58,10 +58,7 @@ function containerInlineBlock(state, silent) {
       if (tokens[curr].type === 'text') {
         hideStartIndex = tokens[curr].content.indexOf(hideStartKey)
         hideEndIndex = tokens[curr].content.indexOf(hideEndKey)
-        const removeStr = tokens[curr].content.substring(
-          hideStartIndex,
-          hideEndIndex + hideEndKey.length,
-        )
+        const removeStr = tokens[curr].content.substring(hideStartIndex, hideEndIndex + hideEndKey.length)
         tokens[curr].content = tokens[curr].content.replace(removeStr, '')
       }
     }
@@ -71,9 +68,7 @@ function containerInlineBlock(state, silent) {
     const max = tokens.length
     for (let curr = 0; curr < max; curr++) {
       if (tokens[curr].type === 'text') {
-        tokens[curr].content = tokens[curr].content
-          .replace(showStartKey, '')
-          .replace(showEndKey, '')
+        tokens[curr].content = tokens[curr].content.replace(showStartKey, '').replace(showEndKey, '')
       }
     }
   }

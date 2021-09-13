@@ -3,56 +3,38 @@
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <div class="navbar-left">
-      <a
-        :href="
-          $lang === 'cn'
-            ? 'https://docs.emqx.cn/broker/latest/'
-            : 'https://docs.emqx.io/en/broker/latest/'
-        "
-        class="home-link"
-      >
+      <router-link :to="`/${$lang}/${product}/latest`" class="home-link">
         <img
           v-if="$site.themeConfig.logo"
           class="logo"
           :src="$withBase($site.themeConfig.logo)"
-          :alt="$lang === 'cn' ? '物联网 MQTT 服务器文档' : 'IoT MQTT Broker Documentations'"
+          :alt="$lang === 'zh' ? '物联网 MQTT 服务器文档' : 'IoT MQTT Broker Documentations'"
         />
-        <span
-          v-if="$siteTitle"
-          ref="siteName"
-          class="site-name"
-          :class="{ 'can-hide': $site.themeConfig.logo }"
-        >
+        <span v-if="$siteTitle" ref="siteName" class="site-name" :class="{ 'can-hide': $site.themeConfig.logo }">
           Docs
         </span>
-      </a>
+      </router-link>
 
       <div class="lang-change">
         <div class="dropdown-wrapper">
           <button type="button" aria-label="Languages" class="dropdown-title">
             <span class="title">
-              {{ $lang === 'cn' ? '中文' : 'English' }}
+              {{ $lang === 'zh' ? '中文' : 'English' }}
             </span>
             <span class="arrow down"></span>
           </button>
           <ul class="nav-dropdown" style="display: none;">
             <li class="dropdown-item">
               <!---->
-              <a
-                :href="'https://docs.emqx.io/en' + langLink"
-                :class="{ 'nav-link': true, active: $lang === 'en' }"
-              >
+              <router-link :to="`/en/${product}/latest`" :class="{ 'nav-link': true, active: $lang === 'en' }">
                 English
-              </a>
+              </router-link>
             </li>
             <li class="dropdown-item">
               <!---->
-              <a
-                :href="'https://docs.emqx.cn' + langLink"
-                :class="{ 'nav-link': true, active: $lang === 'cn' }"
-              >
+              <router-link :to="`/zh/${product}/latest`" :class="{ 'nav-link': true, active: $lang === 'zh' }">
                 中文
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -109,16 +91,14 @@ export default {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName
     },
 
-    langLink() {
-      const products = this.$themeConfig.gitHubConfig[this.$lang].docsType
-      return `/${products}/latest/`
+    product() {
+      return this.$themeConfig.gitHubConfig[this.$lang].docsType
     },
   },
 
   mounted() {
     const MOBILE_DESKTOP_BREAKPOINT = 719 // refer to config.styl
-    const NAVBAR_VERTICAL_PADDING =
-      parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'))
+    const NAVBAR_VERTICAL_PADDING = parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'))
     const handleLinksWrapWidth = () => {
       if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
         this.linksWrapMaxWidth = null

@@ -14,10 +14,7 @@
       <div class="column">
         <p>
           © 2021
-          <a
-            :href="$lang === 'cn' ? 'https://www.emqx.com/zh' : 'https://www.emqx.com/en'"
-            style="color:#9b9c9d"
-          >
+          <a :href="$lang === 'zh' ? 'https://www.emqx.com/zh' : 'https://www.emqx.com/en'" style="color:#9b9c9d">
             EMQ
           </a>
           Technologies Co., Ltd. All rights reserved
@@ -33,7 +30,7 @@
         >
           <img :src="followItem.img" />
         </a>
-        <a class="wechat" v-if="$lang === 'cn'" href="javascript:;">
+        <a class="wechat" v-if="$lang === 'zh'" href="javascript:;">
           <img src="/images/wechat.png" />
           <img class="qr-code" src="https://static.emqx.net/images/new-mails/qr_code.png" />
         </a>

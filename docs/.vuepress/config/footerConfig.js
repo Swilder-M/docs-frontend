@@ -1,34 +1,30 @@
 module.exports = {
-  cn: {
+  zh: {
     columns: {
       文档: [
         {
-          title: 'EMQ X Broker',
-          link: 'https://docs.emqx.cn/broker/latest/',
-        },
-        {
-          title: 'EMQ X Enterprise',
-          link: 'https://docs.emqx.cn/enterprise/latest/',
+          title: 'EMQ X',
+          link: 'https://docs.emqx.com/zh/emqx/latest/',
         },
         {
           title: 'EMQ X Cloud',
-          link: 'https://docs.emqx.cn/cloud/latest/',
+          link: 'https://docs.emqx.com/zh/cloud/latest/',
         },
         {
           title: 'EMQ X Fabric',
-          link: 'https://docs.emqx.cn/fabric/latest/',
+          link: 'https://docs.emqx.com/zh/fabric/latest/',
         },
         {
           title: 'EMQ X Edge',
-          link: 'https://docs.emqx.cn/edge/latest/',
+          link: 'https://docs.emqx.com/zh/edge/latest/',
         },
         {
           title: 'EMQ X Kuiper',
-          link: 'https://docs.emqx.cn/kuiper/latest/',
+          link: 'https://docs.emqx.com/zh/kuiper/latest/',
         },
         {
           title: 'EMQ X Neuron',
-          link: 'https://docs.emqx.cn/neuron/latest/',
+          link: 'https://docs.emqx.com/zh/neuron/latest/',
         },
       ],
       资源: [
@@ -50,7 +46,7 @@ module.exports = {
         { title: 'MQTT 5', link: 'https://www.emqx.com/zh/mqtt/mqtt5' },
         {
           title: 'MQTT 客户端',
-          link: 'https://docs.emqx.cn/broker/latest/development/resource.html',
+          link: 'https://docs.emqx.com/zh/emqx/latest/development/resource.html',
         },
         { title: 'MQTT 测试', link: 'https://www.emqx.com/zh/testing' },
         { title: 'MQTT X', link: 'https://mqttx.app/zh' },
@@ -102,32 +98,28 @@ module.exports = {
     columns: {
       Docs: [
         {
-          title: 'EMQ X Broker',
-          link: 'https://docs.emqx.io/en/broker/latest/',
-        },
-        {
-          title: 'EMQ X Enterprise',
-          link: 'https://docs.emqx.io/en/enterprise/latest/',
+          title: 'EMQ X',
+          link: 'https://docs.emqx.com/en/emqx/latest/',
         },
         {
           title: 'EMQ X Cloud',
-          link: 'https://docs.emqx.io/en/cloud/latest/',
+          link: 'https://docs.emqx.com/en/cloud/latest/',
         },
         {
           title: 'EMQ X Fabric',
-          link: 'https://docs.emqx.io/en/fabric/latest/',
+          link: 'https://docs.emqx.com/en/fabric/latest/',
         },
         {
           title: 'EMQ X Edge',
-          link: 'https://docs.emqx.io/en/edge/latest/',
+          link: 'https://docs.emqx.com/en/edge/latest/',
         },
         {
           title: 'EMQ X Kuiper',
-          link: 'https://docs.emqx.io/en/kuiper/latest/',
+          link: 'https://docs.emqx.com/en/kuiper/latest/',
         },
         {
           title: 'EMQ X Neuron',
-          link: 'https://docs.emqx.io/en/neuron/latest/',
+          link: 'https://docs.emqx.com/en/neuron/latest/',
         },
       ],
       Resources: [
@@ -149,7 +141,7 @@ module.exports = {
         { title: 'MQTT 5', link: 'https://www.emqx.com/en/mqtt/mqtt5' },
         {
           title: 'MQTT Client Library',
-          link: 'https://docs.emqx.io/en/broker/latest/development/resource.html',
+          link: 'https://docs.emqx.com/en/emqx/latest/development/resource.html',
         },
         { title: 'MQTT Testing', link: 'https://www.emqx.com/en/testing' },
         { title: 'MQTT X', link: 'https://mqttx.app/' },

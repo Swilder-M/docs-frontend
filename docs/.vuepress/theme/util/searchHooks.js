@@ -2,7 +2,7 @@ export default {
   async processSuggestions(suggestions, queryString, queryTerms) {
     if (queryString) {
       // add a suggestion to start a search in an external service
-      const lang = location.pathname.indexOf('/en/') !== -1 ? 'en' : 'cn'
+      const lang = location.pathname.indexOf('/en/') !== -1 ? 'en' : 'zh'
       if (lang === 'en') {
         suggestions = suggestions.filter(item => {
           return item.path.indexOf('/en/') !== -1

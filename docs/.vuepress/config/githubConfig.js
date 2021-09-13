@@ -3,7 +3,7 @@ const docsBranch = process.env.DOCS_BRANCH || 'master'
 const version = process.env.VERSION || 'latest'
 
 const EMQXConfig = {
-  cn: {
+  zh: {
     docName: 'EMQ X 文档',
     docsRepo: 'emqx/emqx-docs',
     docsDir: 'zh_CN',
@@ -16,7 +16,7 @@ const EMQXConfig = {
 }
 
 const cloudConfig = {
-  cn: {
+  zh: {
     docName: 'Cloud 文档',
     docsRepo: 'emqx/cloud-docs',
     docsDir: 'zh_CN',
@@ -29,7 +29,7 @@ const cloudConfig = {
 }
 
 const fabricConfig = {
-  cn: {
+  zh: {
     docName: 'Fabric 文档',
     docsRepo: 'emqx/fabric-docs',
     docsDir: 'zh_CN',
@@ -42,7 +42,7 @@ const fabricConfig = {
 }
 
 const edgeConfig = {
-  cn: {
+  zh: {
     docName: 'Edge 文档',
     docsRepo: 'emqx/emqx-edge-docs',
     docsDir: 'zh_CN',
@@ -55,7 +55,7 @@ const edgeConfig = {
 }
 
 const kuiperConfig = {
-  cn: {
+  zh: {
     docName: 'eKuiper 文档',
     docsRepo: 'lf-edge/ekuiper',
     docsDir: 'docs/zh_CN',
@@ -68,7 +68,7 @@ const kuiperConfig = {
 }
 
 const neuronConfig = {
-  cn: {
+  zh: {
     docName: 'Neuron 文档',
     docsRepo: 'neugates/neuron-docs',
     docsDir: 'zh_CN',
@@ -105,8 +105,8 @@ switch (docsType) {
 }
 
 module.exports = {
-  cn: {
-    ...currentConfig.cn,
+  zh: {
+    ...currentConfig.zh,
     docsType,
     docsBranch,
     version,

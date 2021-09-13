@@ -8,10 +8,10 @@
         </span>
         <span class="arrow down"></span>
       </button>
-      <ul class="version-dropdown" style="">
+      <ul v-if="versions.length" class="version-dropdown">
         <li v-for="(version, index) in versions" :key="index" class="dropdown-item">
           <a
-            :href="`${versionLink}${version.value}/`"
+            :href="`/${$lang}/${docsType}/${version.value}/`"
             :class="{ 'version-link': true, active: version.label.indexOf(currentVersion) !== -1 }"
           >
             {{ version.label }}
@@ -34,29 +34,21 @@ export default {
 
   computed: {
     gitHubConfig() {
-      const gitHubConfig =
-        this.$lang === 'cn' ? this.$themeConfig.gitHubConfig.cn : this.$themeConfig.gitHubConfig.en
+      const gitHubConfig = this.$lang === 'zh' ? this.$themeConfig.gitHubConfig.zh : this.$themeConfig.gitHubConfig.en
       return gitHubConfig
     },
     currentVersion() {
       return this.gitHubConfig.version
     },
     docsType() {
-      const { docsType } = this.gitHubConfig
-      return docsType
-    },
-    versionLink() {
-      const { path } = this.$localeConfig
-      return `${path}${this.docsType}/`
+      return this.gitHubConfig.docsType
     },
   },
 
   methods: {
     async getVersions() {
-      const currentDocType = this.$themeConfig.gitHubConfig[this.$lang].docsType
-      const { status, data } = await this.$axios.get(
-        `https://docs.emqx.io/api/${currentDocType}_versions`,
-      )
+      const docsType = this.$themeConfig.gitHubConfig[this.$lang].docsType
+      const { status, data } = await this.$axios.get(`/api/${docsType}_versions.json`)
       if (status === 200 && data) {
         this.versions = data
       }

@@ -19,11 +19,12 @@
     "sass-loader": "7.3.1",
     "vuepress": "^1.7.1",
     "vuepress-plugin-code-copy": "^1.0.6",
-    "vuepress-plugin-fulltext-search": "^2.1.0"
+    "vuepress-plugin-element-tabs": "^0.2.8",
+    "vuepress-plugin-fulltext-search": "^2.1.0",
+    "vuepress-plugin-sitemap": "2.3.0"
   },
   "dependencies": {
     "axios": "^0.21.0",
-    "bulma": "^0.9.1",
-    "vuepress-plugin-element-tabs": "^0.2.8"
+    "bulma": "^0.9.1"
   }
 }

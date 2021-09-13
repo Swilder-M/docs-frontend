@@ -1,11 +1,5 @@
 <template>
-  <RouterLink
-    v-if="isInternal"
-    class="nav-link"
-    :to="link"
-    :exact="exact"
-    @focusout.native="focusoutAction"
-  >
+  <RouterLink v-if="isInternal" class="nav-link" :to="link" :exact="exact" @focusout.native="focusoutAction">
     {{ item.text }}
   </RouterLink>
   <!-- 对站内文档跳转特殊处理 -->
@@ -14,24 +8,14 @@
     :href="link"
     :class="{
       'nav-link': true,
-      'router-link-active':
-        link.indexOf(docsType) !== -1 &&
-        link.indexOf(domain) !== -1 &&
-        link.indexOf('development/resource') === -1,
+      'router-link-active': link.includes(`/${$lang}/${docsType}`) && !link.includes('development/resource'),
     }"
   >
     {{ item.text }}
     <!-- <OutboundLink v-if="isBlankTarget" /> -->
   </a>
 
-  <a
-    v-else
-    :href="link"
-    class="nav-link external"
-    :target="target"
-    :rel="rel"
-    @focusout="focusoutAction"
-  >
+  <a v-else :href="link" class="nav-link external" :target="target" :rel="rel" @focusout="focusoutAction">
     {{ item.text }}
     <!-- <OutboundLink v-if="isBlankTarget" /> -->
   </a>
@@ -82,10 +66,6 @@ export default {
 
     docsType() {
       return this.$themeConfig.gitHubConfig[this.$lang].docsType
-    },
-
-    domain() {
-      return this.$lang === 'cn' ? 'docs.emqx.cn' : 'docs.emqx.io'
     },
 
     target() {

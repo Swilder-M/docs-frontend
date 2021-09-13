@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      backHomeLink: 'https://docs.emqx.cn/broker/latest/',
+      backHomeLink: 'https://docs.emqx.com/zh/emqx/latest/',
       backHome: '返回首页',
       msg: '抱歉，你访问的页面不存在。',
       msgs: [
@@ -33,7 +33,7 @@ export default {
     if (this.$route.path.indexOf('/en/') !== -1) {
       this.msg = this.msgs[Math.floor(Math.random() * this.msgs.length)]
       this.backHome = 'Take me home'
-      this.backHomeLink = 'https://docs.emqx.io/en/broker/latest/'
+      this.backHomeLink = 'https://docs.emqx.com/en/emqx/latest/'
     }
   },
 }

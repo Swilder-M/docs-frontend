@@ -21,7 +21,7 @@
       <a
         class="downloads nav-item"
         :href="
-          $lang === 'cn'
+          $lang === 'zh'
             ? 'https://www.emqx.com/zh/downloads?product=cloud'
             : 'https://www.emqx.com/en/downloads?product=cloud'
         "
@@ -29,7 +29,7 @@
         rel="noopener"
       >
         <img src="/images/download.png" />
-        {{ $lang === 'cn' ? '免费试用' : 'Try Free' }}
+        {{ $lang === 'zh' ? '免费试用' : 'Try Free' }}
       </a>
     </div>
   </nav>
@@ -68,9 +68,9 @@ export default {
             const products = this.$themeConfig.gitHubConfig[this.$lang].docsType
             let link
             if (path === '/en/') {
-              link = `https://docs.emqx.io/en/${products}/latest/`
+              link = `/en/${products}/latest/`
             } else {
-              link = `https://docs.emqx.cn/${products}/latest/`
+              link = `/zh/${products}/latest/`
             }
             return { text, link }
           }),
