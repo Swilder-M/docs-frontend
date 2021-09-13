@@ -19,9 +19,9 @@ module.exports = {
           'width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
       },
     ],
-    ['meta', { property: 'og:site_name', content: 'docs.emqx.io' }],
+    ['meta', { property: 'og:site_name', content: 'docs.emqx.com' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://docs.emqx.io/' }],
+    ['meta', { property: 'og:url', content: 'https://docs.emqx.com/' }],
     ['meta', { property: 'og:title', content: 'EMQ Docs' }],
     ['meta', { property: 'og:image', content: 'https://www.emqx.com/images/logo_512.png' }],
   ],
@@ -68,6 +68,36 @@ module.exports = {
       'vuepress-plugin-code-copy',
       {
         color: '#22bb7a',
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'tip',
+        defaultTitle: {
+          '/en': 'TIP',
+          '/zh': '提示',
+        },
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'warning',
+        defaultTitle: {
+          '/en': 'WARING',
+          '/zh': '注意',
+        },
+      },
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'danger',
+        defaultTitle: {
+          '/en': 'DANGER',
+          '/zh': '警告',
+        },
       },
     ],
   ],
