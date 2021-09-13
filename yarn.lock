@@ -5531,7 +5531,7 @@ node-releases@^1.1.66:
   resolved "https://registry.npm.taobao.org/node-releases/download/node-releases-1.1.66.tgz?cache=0&sync_timestamp=1604726661126&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-releases%2Fdownload%2Fnode-releases-1.1.66.tgz#609bd0dc069381015cd982300bae51ab4f1b1814"
   integrity sha1-YJvQ3AaTgQFc2YIwC65Rq08bGBQ=
 
-node-sass@4.14.1:
+node-sass@4.14.1, node-sass@^4.11.0:
   version "4.14.1"
   resolved "https://registry.npm.taobao.org/node-sass/download/node-sass-4.14.1.tgz?cache=0&sync_timestamp=1604150645761&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-sass%2Fdownload%2Fnode-sass-4.14.1.tgz#99c87ec2efb7047ed638fb4c9db7f3a42e2217b5"
   integrity sha1-mch+wu+3BH7WOPtMnbfzpC4iF7U=
@@ -6877,6 +6877,11 @@ requires-port@^1.0.0:
   resolved "https://registry.npm.taobao.org/requires-port/download/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/resolve-cwd/download/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -6983,7 +6988,7 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass-loader@7.3.1:
+sass-loader@7.3.1, sass-loader@^7.1.0:
   version "7.3.1"
   resolved "https://registry.npm.taobao.org/sass-loader/download/sass-loader-7.3.1.tgz#a5bf68a04bcea1c13ff842d747150f7ab7d0d23f"
   integrity sha1-pb9ooEvOocE/+ELXRxUPerfQ0j8=
@@ -8295,6 +8300,15 @@ vuepress-plugin-container@^2.0.2:
   dependencies:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-element-tabs@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-element-tabs/-/vuepress-plugin-element-tabs-0.2.8.tgz#7e52c97090156c11b18450f848cd4a5767f76502"
+  integrity sha512-wyZNM++o5nIncgqHBHwlDf8B5o5o235ZWRFjLGgFiXY5Zds7Hl/fB0DL54skqNSP6Vn2MOEPd9pyYBW+piYjwA==
+  dependencies:
+    node-sass "^4.11.0"
+    resize-observer-polyfill "^1.5.1"
+    sass-loader "^7.1.0"
 
 vuepress-plugin-fulltext-search@^2.1.0:
   version "2.1.0"

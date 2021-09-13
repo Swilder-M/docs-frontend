@@ -36,6 +36,7 @@ module.exports = {
     '@vuepress/back-to-top',
     '@vuepress/medium-zoom',
     '@vuepress/nprogress',
+    'vuepress-plugin-element-tabs',
     [
       '@vuepress/google-analytics',
       {
