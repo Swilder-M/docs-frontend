@@ -3,7 +3,7 @@
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <div class="navbar-left">
-      <router-link :to="`/${$lang}/${product}/latest`" class="home-link">
+      <a class="home-link" :href="`https://www.emqx.com/${$lang}`" target="_blank" rel="noopener">
         <img
           v-if="$site.themeConfig.logo"
           class="logo"
@@ -13,7 +13,7 @@
         <span v-if="$siteTitle" ref="siteName" class="site-name" :class="{ 'can-hide': $site.themeConfig.logo }">
           Docs
         </span>
-      </router-link>
+      </a>
 
       <div class="lang-change">
         <div class="dropdown-wrapper">

@@ -4,12 +4,12 @@ const version = process.env.VERSION || 'latest'
 
 const EMQXConfig = {
   zh: {
-    docName: 'EMQ X 文档',
+    docName: 'EMQ X',
     docsRepo: 'emqx/emqx-docs',
     docsDir: 'zh_CN',
   },
   en: {
-    docName: 'EMQ X Docs',
+    docName: 'EMQ X',
     docsRepo: 'emqx/emqx-docs',
     docsDir: 'en_US',
   },
@@ -17,12 +17,12 @@ const EMQXConfig = {
 
 const cloudConfig = {
   zh: {
-    docName: 'Cloud 文档',
+    docName: 'Cloud',
     docsRepo: 'emqx/cloud-docs',
     docsDir: 'zh_CN',
   },
   en: {
-    docName: 'Cloud Docs',
+    docName: 'Cloud',
     docsRepo: 'emqx/cloud-docs',
     docsDir: 'en_US',
   },
@@ -30,12 +30,12 @@ const cloudConfig = {
 
 const fabricConfig = {
   zh: {
-    docName: 'Fabric 文档',
+    docName: 'Fabric',
     docsRepo: 'emqx/fabric-docs',
     docsDir: 'zh_CN',
   },
   en: {
-    docName: 'Fabric Docs',
+    docName: 'Fabric',
     docsRepo: 'emqx/fabric-docs',
     docsDir: 'en_US',
   },
@@ -43,12 +43,12 @@ const fabricConfig = {
 
 const edgeConfig = {
   zh: {
-    docName: 'Edge 文档',
+    docName: 'Edge',
     docsRepo: 'emqx/emqx-edge-docs',
     docsDir: 'zh_CN',
   },
   en: {
-    docName: 'Edge Docs',
+    docName: 'Edge',
     docsRepo: 'emqx/emqx-edge-docs',
     docsDir: 'en_US',
   },
@@ -56,12 +56,12 @@ const edgeConfig = {
 
 const kuiperConfig = {
   zh: {
-    docName: 'eKuiper 文档',
+    docName: 'eKuiper',
     docsRepo: 'lf-edge/ekuiper',
     docsDir: 'docs/zh_CN',
   },
   en: {
-    docName: 'eKuiper Docs',
+    docName: 'eKuiper',
     docsRepo: 'lf-edge/ekuiper',
     docsDir: 'docs/en_US',
   },
@@ -69,12 +69,12 @@ const kuiperConfig = {
 
 const neuronConfig = {
   zh: {
-    docName: 'Neuron 文档',
+    docName: 'Neuron',
     docsRepo: 'neugates/neuron-docs',
     docsDir: 'zh_CN',
   },
   en: {
-    docName: 'Neuron Docs',
+    docName: 'Neuron',
     docsRepo: 'neugates/neuron-docs',
     docsDir: 'en_US',
   },

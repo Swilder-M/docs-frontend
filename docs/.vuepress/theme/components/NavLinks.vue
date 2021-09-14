@@ -28,7 +28,6 @@
         target="_blank"
         rel="noopener"
       >
-        <img src="/images/download.png" />
         {{ $lang === 'zh' ? '免费试用' : 'Try Free' }}
       </a>
     </div>

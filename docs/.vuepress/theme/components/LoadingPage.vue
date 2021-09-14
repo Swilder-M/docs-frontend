@@ -12,7 +12,6 @@
 #loader-wrapper
   height: calc(100vh - 72px)
   background #fff
-  background var(--background-color)
   .loader
     position: relative
     width:120px
@@ -26,7 +25,7 @@
       top: 50px
       left: 50px
       > div
-        background-color: #22bb7a
+        background-color: $accentColor
         margin: 2px
         animation-fill-mode: both
         position: absolute

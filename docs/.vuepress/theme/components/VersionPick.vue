@@ -1,6 +1,13 @@
 <template>
   <div class="version-pick">
-    <h2 class="title">{{ gitHubConfig.docName }}</h2>
+    <router-link :to="`/${$lang}/${docsType}/latest`" class="home-link">
+      <h2 class="title">
+        <svg class="icon" aria-hidden="true">
+          <use :xlink:href="`#icon-${docsType}`"></use>
+        </svg>
+        {{ gitHubConfig.docName }}
+      </h2>
+    </router-link>
     <div class="dropdown-wrapper">
       <button type="button" aria-label="Languages" class="dropdown-title">
         <span class="title">

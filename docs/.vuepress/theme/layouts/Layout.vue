@@ -1,15 +1,10 @@
 <template>
-  <div
-    class="theme-container"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
+  <div class="theme-container" :class="pageClasses" @touchstart="onTouchStart" @touchend="onTouchEnd">
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
     <section class="main-box">
-      <div class="columns is-multiline is-mobile">
+      <div class="columns is-mobile">
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
           <template #top>
             <VersionPick />
@@ -79,13 +74,7 @@ export default {
       if (frontmatter.navbar === false || themeConfig.navbar === false) {
         return false
       }
-      return (
-        this.$title ||
-        themeConfig.logo ||
-        themeConfig.repo ||
-        themeConfig.nav ||
-        this.$themeLocaleConfig.nav
-      )
+      return this.$title || themeConfig.logo || themeConfig.repo || themeConfig.nav || this.$themeLocaleConfig.nav
     },
 
     shouldShowSidebar() {
@@ -165,4 +154,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+@import '../styles/scss/base.scss';
+</style>

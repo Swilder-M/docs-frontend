@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue';
-import NavLinks from '@theme/components/NavLinks.vue';
+import SidebarLinks from '@theme/components/SidebarLinks.vue'
+import NavLinks from '@theme/components/NavLinks.vue'
 
 export default {
   name: 'Sidebar',
@@ -19,7 +19,7 @@ export default {
   components: { SidebarLinks, NavLinks },
 
   props: ['items'],
-};
+}
 </script>
 
 <style lang="stylus">
