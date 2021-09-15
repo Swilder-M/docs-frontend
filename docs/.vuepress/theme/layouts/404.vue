@@ -1,14 +1,16 @@
 <template>
-  <div class="theme-container">
-    <div class="theme-default-content not-find">
-      <img src="~public/docs-images/404.png" alt="404" />
-      <h1 class="not-find-title">{{ msg }}</h1>
-
-      <a :href="backHomeLink">
-        <div class="btn back-home">
-          {{ backHome }}
+  <div
+    class="not-find container has-text-centered is-flex is-align-items-center is-justify-content-center"
+    style="min-height: 100vh"
+  >
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <div style="max-width: 460px">
+          <img loading="lazy" class="mt-0 mb-5" src="~public/docs-images/404.png" alt="404" />
+          <h1 class="mt-0 mb-5 is-size-4">{{ msg }}</h1>
+          <a class="back-home" :href="backHomeLink">{{ backHome }}</a>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </template>
