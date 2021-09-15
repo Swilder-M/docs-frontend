@@ -37,6 +37,7 @@ module.exports = {
     '@vuepress/medium-zoom',
     '@vuepress/nprogress',
     'vuepress-plugin-element-tabs',
+    'vuepress-plugin-smooth-scroll',
     [
       '@vuepress/google-analytics',
       {
