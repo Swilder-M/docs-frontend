@@ -15,17 +15,11 @@
         </Sidebar>
         <div class="column col-page">
           <Home v-if="$page.frontmatter.home" />
-          <Page v-else :sidebar-items="sidebarItems">
-            <template #top>
-              <slot name="page-top" />
-            </template>
-            <template #bottom>
-              <Footer />
-            </template>
-          </Page>
+          <Page v-else :sidebar-items="sidebarItems" />
         </div>
         <RightSideBar />
       </div>
+      <Footer />
     </section>
   </div>
 </template>

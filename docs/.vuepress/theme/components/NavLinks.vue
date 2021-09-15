@@ -15,7 +15,9 @@
     <!-- nav-button -->
     <div class="btns">
       <a class="github nav-item" href="https://github.com/emqx/emqx" target="_blank" rel="noopener">
-        <img src="/images/github-black.png" />
+        <svg class="icon" aria-hidden="true" style="font-size: 20px">
+          <use xlink:href="#icon-github"></use>
+        </svg>
         Star
       </a>
       <a
