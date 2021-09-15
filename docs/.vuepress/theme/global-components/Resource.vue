@@ -6,9 +6,7 @@
         :class="{ 'crud-title': true, active: activeResource === 'mqttClients' }"
         >MQTT Clients</a
       >
-      <a
-        @click="activeResource = 'mqttTools'"
-        :class="{ 'crud-title': true, active: activeResource === 'mqttTools' }"
+      <a @click="activeResource = 'mqttTools'" :class="{ 'crud-title': true, active: activeResource === 'mqttTools' }"
         >MQTT Tools</a
       >
       <a
@@ -35,7 +33,7 @@
             <div class="sdktools-item__header">
               <img
                 class="sdktools-item__img"
-                :src="`/images/sdk_tools/${item.image}`"
+                :src="`/docs-images/sdk_tools/${item.image}`"
                 alt="image"
                 width="64px"
                 height="64px"
@@ -666,7 +664,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .header-tabs {
   white-space: nowrap;
   overflow-x: auto;

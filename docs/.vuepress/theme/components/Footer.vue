@@ -6,14 +6,14 @@
           <div class="is-flex is-flex-direction-column is-justify-content-space-between" style="height: 100%">
             <div class="mb-5">
               <a :href="`https://www.emqx.com/${$lang}`" target="_blank" rel="noopener">
-                <img src="/images/logo.png" alt="EMQ LOGO" class="logo" />
+                <img src="~public/docs-images/logo.png" alt="EMQ LOGO" class="logo" />
               </a>
             </div>
             <div>
               <img
                 v-if="$lang === 'zh'"
                 loading="lazy"
-                src="/images/qr-code.png"
+                src="~public/docs-images/qr-code.png"
                 alt="EMQ 映云科技公众号二维码"
                 class="qr-code mb-3"
                 width="146"
@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <ul v-for="(cols, title) in columns" :key="title" class="column m-0">
+        <ul v-for="(cols, title) in columns" :key="title" class="column is-narrow m-0">
           <li>
             <h5 class="mt-0 mb-3">{{ title }}</h5>
           </li>
@@ -58,19 +58,6 @@
           <a v-if="$lang === 'zh'" href="https://beian.miit.gov.cn/">
             浙ICP备17021694号-4
           </a>
-          <!-- <a
-            v-for="(followItem, index) in followList"
-            :key="index"
-            :href="followItem.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <img :src="followItem.img" />
-          </a>
-          <a class="wechat" v-if="$lang === 'zh'" href="javascript:;">
-            <img src="/images/wechat.png" />
-            <img class="qr-code" src="https://static.emqx.net/images/new-mails/qr_code.png" />
-          </a> -->
         </div>
       </div>
     </div>
@@ -83,12 +70,49 @@ export default {
   computed: {
     columns() {
       const { footerConfig } = this.$themeConfig
+      const columns = footerConfig[this.$lang].columns
+      if (this.popularTopics) {
+        columns[this.$lang === 'zh' ? '热门主题' : 'Popular Topics'] = this.popularTopics
+      }
       return footerConfig[this.$lang].columns
     },
     followList() {
       const { footerConfig } = this.$themeConfig
       return footerConfig[this.$lang].followList
     },
+  },
+
+  data() {
+    return {
+      popularTopics: null,
+    }
+  },
+
+  watch: {
+    $lang() {
+      this.getPopularTopics()
+    },
+  },
+
+  methods: {
+    async getPopularTopics() {
+      const { axiosBaseUrl } = this.$themeConfig
+      try {
+        const { status, data } = await this.$axios.get(`${axiosBaseUrl}/popular_blogs`, {
+          headers: { 'Content-Language': this.$lang },
+          params: { _limit: 6 },
+        })
+        if (status === 200 && data.items.length) {
+          this.popularTopics = data.items.map(item => {
+            return { title: item.title, link: `https://www.emqx.com/${this.$lang}/${item.titleUrl}` }
+          })
+        }
+      } catch (error) {}
+    },
+  },
+
+  created() {
+    this.getPopularTopics()
   },
 }
 </script>

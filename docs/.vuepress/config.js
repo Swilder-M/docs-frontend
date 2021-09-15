@@ -7,11 +7,15 @@ const { removePlugin, PLUGINS } = require('@vuepress/markdown')
 const fs = require('fs')
 const { path } = require('@vuepress/shared-utils')
 const publicPath = 'https://docs-static.emqx.net/'
+const axiosBaseUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'https://community-test.emqx.cn/api/v1'
+    : 'https://community-sites.emqx.com/api/v1'
 
 module.exports = {
   host: 'localhost',
   head: [
-    ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: '/docs-images/favicon.ico' }],
     [
       'meta',
       {
@@ -162,13 +166,14 @@ module.exports = {
     // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
     preLinks: true,
     // 左上放 logo
-    logo: '/logo.png',
+    logo: '/docs-images/logo.png',
     // 页面滚动
     smoothScroll: true,
     // GitHub设置
-    gitHubConfig: gitHubConfig,
+    gitHubConfig,
+    axiosBaseUrl,
     // 页脚设置
-    footerConfig: footerConfig,
+    footerConfig,
     // 搜索最大数量
     searchMaxSuggestions: 30,
   },

@@ -318,7 +318,7 @@ div[class*='language-'].line-numbers-mode {
     input {
       height: 36px;
       border-radius: 8px;
-      background-image: url(/images/search.png);
+      background-image: url(~public/docs-images/search.png);
       background-position: 0.6rem;
       border: none;
       transition: width 0.5s ease;
@@ -628,11 +628,11 @@ div[class*='language-'].line-numbers-mode {
           height: 15px;
         }
         &.improve-doc::before {
-          background: url(/images/edit.png) no-repeat;
+          background: url(~public/docs-images/edit.png) no-repeat;
           background-size: contain;
         }
         &.feedback-doc::before {
-          background: url(/images/feedback.png) no-repeat;
+          background: url(~public/docs-images/feedback.png) no-repeat;
           background-size: contain;
         }
       }
@@ -675,8 +675,12 @@ div[class*='language-'].line-numbers-mode {
       padding: 2.5rem 0;
       > ul {
         list-style: none;
+        min-width: 240px;
         li {
-          line-height: 32px;
+          line-height: 20px;
+          &:not(:last-child) {
+            margin-bottom: 12px;
+          }
         }
         h5 {
           font-size: 16px;

@@ -14,17 +14,6 @@ module.exports = {
         { title: '在线 MQTT 5 服务器', link: 'https://www.emqx.com/zh/mqtt/public-mqtt5-broker' },
         { title: 'MQTT Websocket Toolkit', link: 'https://www.emqx.com/zh/mqtt/mqtt-websocket-toolkit' },
       ],
-      热门主题: [
-        { title: 'MQTT Broker 集群详解', link: 'https://www.emqx.com/zh/blog/tag/mqtt-broker-集群' },
-        { title: '在树莓派上使用 MQTT', link: 'https://www.emqx.com/zh/blog/use-mqtt-with-raspberry-pi' },
-        { title: '如何在 Python 中使用 MQTT', link: 'https://www.emqx.com/zh/blog/how-to-use-mqtt-in-python' },
-        { title: '如何在 PHP 项目中使用 MQTT', link: 'https://www.emqx.com/zh/blog/how-to-use-mqtt-in-php' },
-        { title: '2020 年常见 MQTT 客户端工具比较', link: 'https://www.emqx.com/zh/blog/mqtt-client-tools' },
-        {
-          title: 'ESP8266 连接到免费的公共 MQTT 服务器',
-          link: 'https://www.emqx.com/zh/blog/esp8266-connects-to-the-public-mqtt-broker',
-        },
-      ],
     },
     followList: [
       { icon: 'icon-github', link: 'https://github.com/emqx/emqx' },
@@ -51,17 +40,6 @@ module.exports = {
         { title: 'MQTT X', link: 'https://mqttx.app/' },
         { title: 'Public MQTT 5 Broker', link: 'https://www.emqx.com/en/mqtt/public-mqtt5-broker' },
         { title: 'MQTT Websocket Toolkit', link: 'https://www.emqx.com/en/mqtt/mqtt-websocket-toolkit' },
-      ],
-      'Popular Topics': [
-        { title: 'MQTT Broker 集群详解', link: 'https://www.emqx.com/zh/blog/tag/mqtt-broker-集群' },
-        { title: '在树莓派上使用 MQTT', link: 'https://www.emqx.com/zh/blog/use-mqtt-with-raspberry-pi' },
-        { title: '如何在 Python 中使用 MQTT', link: 'https://www.emqx.com/zh/blog/how-to-use-mqtt-in-python' },
-        { title: '如何在 PHP 项目中使用 MQTT', link: 'https://www.emqx.com/zh/blog/how-to-use-mqtt-in-php' },
-        { title: '2020 年常见 MQTT 客户端工具比较', link: 'https://www.emqx.com/zh/blog/mqtt-client-tools' },
-        {
-          title: 'ESP8266 连接到免费的公共 MQTT 服务器',
-          link: 'https://www.emqx.com/zh/blog/esp8266-connects-to-the-public-mqtt-broker',
-        },
       ],
     },
     followList: [
