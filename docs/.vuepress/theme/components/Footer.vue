@@ -40,7 +40,7 @@
             <h5 class="mt-0 mb-3">{{ title }}</h5>
           </li>
           <li v-for="(col, index) in cols" :key="index">
-            <a :href="col.link">{{ col.title }}</a>
+            <a :href="col.link" target="_blank" rel="noopener">{{ col.title }}</a>
           </li>
         </ul>
       </div>

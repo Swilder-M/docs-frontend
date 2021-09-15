@@ -204,7 +204,6 @@ div[class*='language-'].line-numbers-mode {
       bottom: 16px;
       width: 46px;
       height: 46px;
-      background-color: #282c34;
     }
   }
   .line-numbers-wrapper,
@@ -217,7 +216,6 @@ div[class*='language-'].line-numbers-mode {
 .navbar {
   display: flex;
   align-items: center;
-  font-size: 0;
   padding: 0;
   height: 72px;
   line-height: 1;
@@ -245,7 +243,7 @@ div[class*='language-'].line-numbers-mode {
       .logo {
         vertical-align: middle;
         height: 20px;
-        margin-right: 0.8rem;
+        margin-right: 8px;
       }
       .site-name {
         font-size: 18px;
@@ -342,7 +340,7 @@ div[class*='language-'].line-numbers-mode {
     .suggestions {
       padding: 8px 12px;
       box-shadow: 4px 4px 8px 4px #ddd;
-      top: 72px;
+      top: 30px;
       max-height: calc(80vh - 72px);
       overflow-y: auto;
       .suggestion.focused a .suggestion-row .suggestion-content {
@@ -355,10 +353,11 @@ div[class*='language-'].line-numbers-mode {
       }
       @media (max-width: 719px) {
         position: fixed;
+        top: 72px;
         left: 0;
+        margin: 0;
         width: 100vw;
         height: 100%;
-        max-height: calc(100vh - 55px);
         border: none;
         box-shadow: none;
       }
