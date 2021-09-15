@@ -12,6 +12,9 @@ $ yarn dev
 # build for production
 $ yarn build
 
-### generate pdf
+# build for test & serve generated files of your VuePress site locally.
+$ yarn start
+
+# generate pdf
 $ yarn pdf
 ```

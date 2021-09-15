@@ -6,6 +6,7 @@ const { containerBlock, containerInlineBlock } = require('./theme/util/container
 const { removePlugin, PLUGINS } = require('@vuepress/markdown')
 const fs = require('fs')
 const { path } = require('@vuepress/shared-utils')
+const publicPath = 'https://docs-static.emqx.net/'
 
 module.exports = {
   host: 'localhost',
@@ -86,6 +87,14 @@ module.exports = {
         hostname: 'https://docs.emqx.com',
         exclude: ['/404.html'],
         outFile: 'sitemap_docs.xml',
+      },
+    ],
+    [
+      'vuepress-plugin-serve',
+      {
+        staticOptions: {
+          dotfiles: 'allow',
+        },
       },
     ],
     [
@@ -204,7 +213,9 @@ module.exports = {
   chainWebpack: (webpackConfig, isServer) => {
     webpackConfig.when(process.env.NODE_ENV === 'production', config => {
       config.output.filename('docs-assets/js/[name].[chunkhash:8].js')
-      config.output.publicPath(publicPath)
+      if (!process.env.BUILD_MODE === 'test') {
+        config.output.publicPath(publicPath)
+      }
     })
 
     webpackConfig.resolve.alias.set('public', path.resolve(__dirname, './public'))
