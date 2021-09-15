@@ -13,7 +13,7 @@
               <img
                 v-if="$lang === 'zh'"
                 loading="lazy"
-                src="https://static.emqx.com/_nuxt/img/qr-code.db67423.png"
+                src="/images/qr-code.png"
                 alt="EMQ 映云科技公众号二维码"
                 class="qr-code mb-3"
                 width="146"

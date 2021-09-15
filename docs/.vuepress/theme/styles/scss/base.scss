@@ -394,7 +394,7 @@ div[class*='language-'].line-numbers-mode {
     transform: translateY(-50%);
     .nav-links {
       > .nav-item {
-        &:nth-child(4) {
+        &:nth-last-of-type(2) {
           display: none;
         }
         a,
