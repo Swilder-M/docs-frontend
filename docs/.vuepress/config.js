@@ -11,6 +11,8 @@ const axiosBaseUrl =
     ? 'https://community-test.emqx.cn/api/v1'
     : 'https://community-sites.emqx.com/api/v1'
 const { docsType, docName, version } = gitHubConfig.en
+const prefixEN = `/en/${docsType}/${version}/`
+const prefixZH = `/zh/${docsType}/${version}/`
 
 module.exports = {
   host: 'localhost',
@@ -144,7 +146,9 @@ module.exports = {
         editLinkText: 'Edit this page on GitHub',
         nav: navConfig.en,
         sidebarDepth: 1,
-        sidebar: directory.en,
+        sidebar: {
+          [prefixEN]: directory.en,
+        },
       },
       '/': {
         lang: 'zh',
@@ -158,7 +162,9 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         nav: navConfig.zh,
         sidebarDepth: 1,
-        sidebar: directory.zh,
+        sidebar: {
+          [prefixZH]: directory.cn,
+        },
       },
     },
     // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
