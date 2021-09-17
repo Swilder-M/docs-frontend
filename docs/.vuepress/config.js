@@ -10,6 +10,7 @@ const axiosBaseUrl =
   process.env.NODE_ENV === 'development'
     ? 'https://community-test.emqx.cn/api/v1'
     : 'https://community-sites.emqx.com/api/v1'
+const { docsType, docName, version } = gitHubConfig.en
 
 module.exports = {
   host: 'localhost',
@@ -58,13 +59,13 @@ module.exports = {
     [
       '@snowdog/vuepress-plugin-pdf-export',
       {
-        outputFileName: `${gitHubConfig.en.docName} ${gitHubConfig.en.version}.pdf`,
+        outputFileName: `${docName} ${version}.pdf`,
         pageOptions: {
           margin: { top: 32, right: 48, bottom: 64, left: 48 },
           displayHeaderFooter: true,
           footerTemplate: `
               <div style="width: 100%; margin: 16px 48px; font-size: 9px; text-align: center;">
-                <span>${gitHubConfig.en.docName} ${gitHubConfig.en.version}</span>
+                <span>${docName} ${version}</span>
               </div>
           `,
         },
@@ -89,7 +90,7 @@ module.exports = {
       {
         hostname: 'https://docs.emqx.com',
         exclude: ['/404.html'],
-        outFile: 'sitemap_docs.xml',
+        outFile: `sitemap_${docsType}_${version}.xml`,
       },
     ],
     [
