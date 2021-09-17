@@ -6,7 +6,6 @@ const { containerBlock, containerInlineBlock } = require('./theme/util/container
 const { removePlugin, PLUGINS } = require('@vuepress/markdown')
 const fs = require('fs')
 const { path } = require('@vuepress/shared-utils')
-const publicPath = 'https://docs-static.emqx.net/'
 const axiosBaseUrl =
   process.env.NODE_ENV === 'development'
     ? 'https://community-test.emqx.cn/api/v1'
@@ -218,9 +217,6 @@ module.exports = {
   chainWebpack: (webpackConfig, isServer) => {
     webpackConfig.when(process.env.NODE_ENV === 'production', config => {
       config.output.filename('docs-assets/js/[name].[chunkhash:8].js')
-      if (!process.env.BUILD_MODE === 'test') {
-        config.output.publicPath(publicPath)
-      }
     })
 
     webpackConfig.resolve.alias.set('public', path.resolve(__dirname, './public'))
