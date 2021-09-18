@@ -16,7 +16,7 @@ export default {
       item.type === 'auto'
         ? selfActive || item.children.some(c => isActive($route, item.basePath + '#' + c.slug))
         : selfActive
-    const isEnterprise = item.frontmatter.enterprise
+    const isEnterprise = item.frontmatter ? item.frontmatter.enterprise : undefined
     const link =
       item.type === 'external'
         ? renderExternal(h, item.path, item.title || item.path)

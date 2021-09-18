@@ -104,7 +104,7 @@ export default {
         })
         if (status === 200 && data.items.length) {
           this.popularTopics = data.items.map(item => {
-            return { title: item.title, link: `https://www.emqx.com/${this.$lang}/${item.titleUrl}` }
+            return { title: item.title, link: `https://www.emqx.com/${this.$lang}/blog/${item.titleUrl}` }
           })
         }
       } catch (error) {}
