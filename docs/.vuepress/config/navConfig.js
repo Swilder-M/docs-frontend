@@ -1,15 +1,16 @@
 module.exports = {
   zh: [
-    { text: '博客', link: 'https://www.emqx.com/zh/blog' },
+    { text: '问答', link: 'https://askemq.com/' },
     { text: '活动', link: 'https://www.emqx.com/zh/events' },
     { text: '社区', link: 'https://www.emqx.com/zh/community' },
     {
-      text: '资源',
+      text: '学习',
       items: [
+        { text: '博客', link: 'https://www.emqx.com/zh/blog' },
         { text: '视频', link: 'https://www.emqx.com/zh/resources?type=videos' },
-        { text: '白皮书', link: 'https://www.emqx.com/zh/resources?type=white-papers' },
         { text: '电子书', link: 'https://www.emqx.com/zh/resources?type=ebooks' },
         { text: '测试报告', link: 'https://www.emqx.com/zh/resources?type=reports' },
+        { text: '白皮书', link: 'https://www.emqx.com/zh/resources?type=white-papers' },
       ],
     },
     {
@@ -24,16 +25,16 @@ module.exports = {
     },
   ],
   en: [
-    { text: 'Blog', link: 'https://www.emqx.com/en/blog' },
     { text: 'Events', link: 'https://www.emqx.com/en/events' },
     { text: 'Community', link: 'https://www.emqx.com/en/community' },
     {
-      text: 'Resources',
+      text: 'Learn',
       items: [
+        { text: 'Blog', link: 'https://www.emqx.com/en/blog' },
         { text: 'Videos', link: 'https://www.emqx.com/en/resources?type=videos' },
-        { text: 'White Papers', link: 'https://www.emqx.com/en/resources?type=white-papers' },
         { text: 'eBooks', link: 'https://www.emqx.com/en/resources?type=ebooks' },
         { text: 'Reports', link: 'https://www.emqx.com/en/resources?type=reports' },
+        { text: 'White Papers', link: 'https://www.emqx.com/en/resources?type=white-papers' },
       ],
     },
     {

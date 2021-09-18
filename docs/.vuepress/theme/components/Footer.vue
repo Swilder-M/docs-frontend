@@ -2,7 +2,7 @@
   <footer class="main-footer-box has-text-centered-mobile">
     <div class="container">
       <div class="columns">
-        <div class="column is-4">
+        <div class="column is-flex-grow-3 is-flex-shrink-0">
           <div class="is-flex is-flex-direction-column is-justify-content-space-between" style="height: 100%">
             <div class="mb-5">
               <a :href="`https://www.emqx.com/${$lang}`" target="_blank" rel="noopener">
@@ -35,7 +35,11 @@
             </div>
           </div>
         </div>
-        <ul v-for="(cols, title) in columns" :key="title" class="column is-narrow m-0">
+        <ul
+          v-for="(cols, title) in columns"
+          :key="title"
+          :class="['column', 'is-narrow', 'm-0', { 'is-flex-grow-1': !['热门主题', 'Popular Topics'].includes(title) }]"
+        >
           <li>
             <h5 class="mt-0 mb-3">{{ title }}</h5>
           </li>
@@ -56,7 +60,7 @@
         </div>
         <div class="has-text-right-tablet column">
           <a v-if="$lang === 'zh'" href="https://beian.miit.gov.cn/">
-            浙ICP备17021694号-4
+            浙ICP备17021694号-7
           </a>
         </div>
       </div>

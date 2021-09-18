@@ -170,7 +170,6 @@ div[class*='language-'] {
 .custom-block.warning,
 .custom-block.danger {
   border-left-width: 0.4rem;
-  color: #515151;
 }
 .custom-block.danger {
   background-color: #fff1f0;
@@ -187,10 +186,10 @@ div[class*='language-'] {
   }
 }
 .custom-block.tip {
-  background-color: #eefff8;
-  border-color: #55bb77;
+  background-color: $base-bg-color;
+  border-color: $base-color;
   .custom-block-title {
-    color: #2c8e4c;
+    color: $base-color;
   }
 }
 div[class*='language-'].line-numbers-mode {
@@ -674,7 +673,6 @@ div[class*='language-'].line-numbers-mode {
       padding: 2.5rem 0;
       > ul {
         list-style: none;
-        min-width: 240px;
         li {
           line-height: 20px;
           &:not(:last-child) {
