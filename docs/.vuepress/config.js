@@ -30,7 +30,7 @@ module.exports = {
     ['meta', { property: 'og:url', content: 'https://docs.emqx.com/' }],
     ['meta', { property: 'og:title', content: 'EMQ Docs' }],
     ['meta', { property: 'og:image', content: 'https://www.emqx.com/images/logo_512.png' }],
-    ['script', { charset: 'utf-8', src: '//at.alicdn.com/t/font_2772539_2538rhy7zth.js' }],
+    ['script', { charset: 'utf-8', src: '//at.alicdn.com/t/font_2772539_vulpmpuyh1.js' }],
   ],
   plugins: [
     [

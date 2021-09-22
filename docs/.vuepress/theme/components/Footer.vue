@@ -1,6 +1,32 @@
 <template>
   <footer class="main-footer-box has-text-centered-mobile">
     <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <h2 class="m-0 p-0 is-size-3">{{ translations.title }}</h2>
+        </div>
+        <div id="form-mail" class="column is-6 is-offset-1 form-mail">
+          <div class="is-flex">
+            <input
+              v-model="emailAddress"
+              id="inputEmail"
+              type="email"
+              required
+              name="inputEmail"
+              :class="['form-control', 'mr-4', { 'error-input': isError }, { 'success-input': isSuccess }]"
+              :placeholder="translations.emailAddress"
+              @focus="clearError"
+            />
+            <button :class="['button', 'is-gradient', 'px-5', { 'is-loading': loading }]" @click="newsLetter">
+              {{ translations.subscribe }} →
+            </button>
+            <p :class="{ 'sub-tips': true, 'm-0': true, 'is-error': isError, 'is-success': isSuccess }">
+              {{ message }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr />
       <div class="columns">
         <div class="column is-flex-grow-3 is-flex-shrink-0">
           <div class="is-flex is-flex-direction-column is-justify-content-space-between" style="height: 100%">
@@ -48,8 +74,8 @@
           </li>
         </ul>
       </div>
-      <div class="record-information columns is-gapless is-vcentered">
-        <div class="column">
+      <div class="record-information columns is-gapless is-vcentered is-centered">
+        <div class="column is-narrow">
           <p class="m-0">
             © 2021
             <a :href="$lang === 'zh' ? 'https://www.emqx.com/zh' : 'https://www.emqx.com/en'">
@@ -57,11 +83,6 @@
             </a>
             Technologies Co., Ltd. All rights reserved
           </p>
-        </div>
-        <div class="has-text-right-tablet column">
-          <a v-if="$lang === 'zh'" href="https://beian.miit.gov.cn/">
-            浙ICP备17021694号-7
-          </a>
         </div>
       </div>
     </div>
@@ -71,6 +92,17 @@
 <script>
 export default {
   name: 'Footer',
+  data() {
+    return {
+      emailAddress: '',
+      message: '',
+      isError: false,
+      isSuccess: false,
+      loading: false,
+      popularTopics: null,
+    }
+  },
+
   computed: {
     columns() {
       const { footerConfig } = this.$themeConfig
@@ -84,12 +116,25 @@ export default {
       const { footerConfig } = this.$themeConfig
       return footerConfig[this.$lang].followList
     },
-  },
-
-  data() {
-    return {
-      popularTopics: null,
-    }
+    translations() {
+      return this.$lang === 'en'
+        ? {
+            title: 'Subscribe to Our Newsletters',
+            emailAddress: 'Email',
+            subscribe: 'Subscribe',
+            thanksForSub: 'Thanks for subscribing to the newsletter.',
+            emailExist: 'Email has exist',
+            emailError: 'Not a valid email address',
+          }
+        : {
+            title: '订阅 EMQ 最新资讯',
+            emailAddress: '邮箱',
+            subscribe: '订阅',
+            thanksForSub: '谢谢您的订阅！我们将会实时为您提供最新的资讯。',
+            emailExist: '该邮件已订阅',
+            emailError: 'Email 格式错误',
+          }
+    },
   },
 
   watch: {
@@ -112,6 +157,46 @@ export default {
           })
         }
       } catch (error) {}
+    },
+    clearError() {
+      this.isError = false
+      this.isSuccess = false
+      this.message = ''
+    },
+    newsLetter() {
+      const pattern = /^[a-zA-Z0-9.!#$%&’+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/
+      const isValid = pattern.test(this.emailAddress)
+      if (isValid) {
+        const data = {
+          email: this.emailAddress,
+          source: 'docs',
+        }
+        const { axiosBaseUrl } = this.$themeConfig
+        this.loading = true
+        this.$axios
+          .post(`${axiosBaseUrl}/subscriptions`, data, {
+            headers: { 'Content-Language': this.$lang },
+          })
+          .then(({ status, data }) => {
+            if (status === 200 && data) {
+              this.message = this.translations.thanksForSub
+              this.isError = false
+              this.isSuccess = true
+            }
+          })
+          .catch(_error => {
+            this.message = this.translations.emailExist
+            this.isError = true
+            isSuccess = false
+          })
+          .finally(() => {
+            this.loading = false
+          })
+      } else {
+        this.message = this.translations.emailError
+        this.isError = true
+        this.isSuccess = false
+      }
     },
   },
 
