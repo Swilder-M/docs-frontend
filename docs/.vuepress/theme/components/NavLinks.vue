@@ -18,7 +18,7 @@
         <svg class="icon" aria-hidden="true" style="font-size: 20px">
           <use xlink:href="#icon-github"></use>
         </svg>
-        Star
+        {{ starCount || 'Star' }}
       </a>
       <a
         class="downloads nav-item"
@@ -47,6 +47,12 @@ export default {
   components: {
     NavLink,
     DropdownLink,
+  },
+
+  data() {
+    return {
+      starCount: null,
+    }
   },
 
   computed: {
@@ -114,6 +120,25 @@ export default {
 
       return 'Source'
     },
+  },
+
+  methods: {
+    async getGitHubStar() {
+      const reopApi = 'https://api.github.com/repos/emqx/emqx'
+      try {
+        const { status, data } = await this.$axios.get(reopApi)
+        if (status === 200 && data) {
+          this.starCount =
+            data.stargazers_count > 1000
+              ? Math.round(parseInt(data.stargazers_count, 10) / 100) / 10 + 'k'
+              : data.stargazers_count
+        }
+      } catch (e) {}
+    },
+  },
+
+  created() {
+    this.getGitHubStar()
   },
 }
 </script>

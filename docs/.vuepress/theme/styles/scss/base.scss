@@ -347,9 +347,8 @@ div[class*='language-'].line-numbers-mode {
     }
     .suggestions {
       padding: 8px 12px;
-      box-shadow: 4px 4px 8px 4px #ddd;
       top: 30px;
-      max-height: calc(80vh - 72px);
+      max-height: calc(100vh - 72px);
       overflow-y: auto;
       .suggestion.focused a .suggestion-row .suggestion-content {
         background-color: #f8fafc;
@@ -447,20 +446,20 @@ div[class*='language-'].line-numbers-mode {
         display: inline-block;
         margin-left: 1.4rem;
         a {
+          width: 102px;
+          border-radius: 8px;
           font-size: 14px;
           font-weight: 500;
-          line-height: 34px;
+          line-height: 40px;
           text-align: center;
           &.github {
             color: #2e2e2e;
+            border: 1px solid #152033;
           }
           &.downloads {
-            width: 102px;
-            margin-left: 24px;
+            margin-left: 16px;
             background: #1d1d1d;
-            border-radius: 8px;
             color: #fff;
-            line-height: 40px;
           }
           img {
             height: 16px;
@@ -684,7 +683,7 @@ div[class*='language-'].line-numbers-mode {
     }
     hr {
       border: none;
-      background-color: #d3dbe8;
+      background-color: $border-color;
       height: 1px;
     }
     .form-mail {
@@ -773,7 +772,7 @@ div[class*='language-'].line-numbers-mode {
       a {
         font-size: 12px;
         font-weight: 600;
-        color: #9b9c9d;
+        color: #b1bcca;
         vertical-align: middle;
         display: inline-block;
       }
