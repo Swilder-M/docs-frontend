@@ -229,6 +229,13 @@ module.exports = {
     webpackConfig.resolve.alias.set('public', path.resolve(__dirname, './public'))
     webpackConfig.resolve.alias.set('assets', path.resolve(__dirname, './assets'))
 
+    if (!isServer && process.env.BUILD_MODE === 'test') {
+      webpackConfig
+        .plugin('analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [{ analyzerPort: 7777 }])
+        .init(Plugin => new Plugin())
+    }
+
     webpackConfig.module
       .rule('images')
       .test(/\.(png|jpe?g|gif)(\?.*)?$/)

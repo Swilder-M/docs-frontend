@@ -820,7 +820,8 @@ div[class*='language-'].line-numbers-mode {
 
 /* print */
 @media print {
-  .main-box .right-column,
+  .navbar,
+  .right-column,
   .main-footer-box {
     display: none;
   }
