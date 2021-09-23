@@ -21,6 +21,7 @@
       </div>
       <Footer />
     </section>
+    <page-feedback />
   </div>
 </template>
 
@@ -32,6 +33,7 @@ import { resolveSidebarItems } from '../util'
 import VersionPick from '../components/VersionPick'
 import RightSideBar from '../components/RightSideBar'
 import Footer from '../components/Footer'
+import PageFeedback from '../components/pageFeedback.vue'
 
 export default {
   name: 'Layout',
@@ -43,6 +45,7 @@ export default {
     VersionPick,
     RightSideBar,
     Footer,
+    PageFeedback,
   },
 
   data() {

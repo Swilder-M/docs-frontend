@@ -46,12 +46,6 @@ module.exports = {
     'vuepress-plugin-element-tabs',
     'vuepress-plugin-smooth-scroll',
     [
-      '@vuepress/google-analytics',
-      {
-        ga: 'UA-145467055-1',
-      },
-    ],
-    [
       'fulltext-search',
       {
         // provide the contents of a JavaScript file
@@ -182,6 +176,13 @@ module.exports = {
     footerConfig,
     // 搜索最大数量
     searchMaxSuggestions: 30,
+    // Google Analytics
+    googleAnalytics: {
+      id: 'UA-145467055-1',
+      // Type: Boolean
+      // Turn on the development mode and disable the module.
+      dev: true,
+    },
   },
   postcss: [require('autoprefixer')],
   sass: { indentedSyntax: true },
