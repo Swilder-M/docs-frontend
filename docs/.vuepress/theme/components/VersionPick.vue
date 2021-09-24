@@ -16,14 +16,16 @@
         <span class="arrow down"></span>
       </button>
       <ul v-if="versions.length" class="version-dropdown">
-        <li v-for="(version, index) in versions" :key="index" class="dropdown-item">
-          <a
-            :href="`/${$lang}/${docsType}/${version}/`"
-            :class="{ 'version-link': true, active: version.indexOf(currentVersion) !== -1 }"
-          >
-            {{ version }}
-          </a>
-        </li>
+        <template v-for="(version, index) in versions">
+          <li v-if="index < 10" :key="index" class="dropdown-item">
+            <a
+              :href="`/${$lang}/${docsType}/${version}/`"
+              :class="{ 'version-link': true, active: version.indexOf(currentVersion) !== -1 }"
+            >
+              {{ version }}
+            </a>
+          </li>
+        </template>
       </ul>
     </div>
   </div>
