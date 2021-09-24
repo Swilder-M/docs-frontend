@@ -220,6 +220,28 @@ div[class*='language-'].line-numbers-mode {
   border-radius: 50%;
 }
 
+// tabs
+.el-tabs {
+  .el-tabs__item {
+    box-shadow: none !important;
+    &.is-active,
+    &:hover {
+      color: $base-color !important;
+    }
+  }
+  &.el-tabs--card {
+    > .el-tabs__header {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    > .el-tabs__content {
+      padding: 16px 24px;
+      border: 1px solid #e1e8f4;
+      border-radius: 0 4px 4px 4px;
+    }
+  }
+}
+
 // navbar
 .navbar {
   display: flex;
@@ -458,7 +480,7 @@ div[class*='language-'].line-numbers-mode {
           }
           &.downloads {
             margin-left: 16px;
-            background: #1d1d1d;
+            background: linear-gradient(317deg, #866dff 0%, #4d6bff 100%);
             color: #fff;
           }
           img {
