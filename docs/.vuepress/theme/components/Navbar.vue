@@ -26,13 +26,13 @@
           <ul class="nav-dropdown" style="display: none;">
             <li class="dropdown-item">
               <!---->
-              <router-link :to="`/en/${product}/latest`" :class="{ 'nav-link': true, active: $lang === 'en' }">
+              <router-link :to="`/en/${product}/${version}/`" :class="{ 'nav-link': true, active: $lang === 'en' }">
                 English
               </router-link>
             </li>
             <li class="dropdown-item">
               <!---->
-              <router-link :to="`/zh/${product}/latest`" :class="{ 'nav-link': true, active: $lang === 'zh' }">
+              <router-link :to="`/zh/${product}/${version}/`" :class="{ 'nav-link': true, active: $lang === 'zh' }">
                 中文
               </router-link>
             </li>
@@ -93,6 +93,10 @@ export default {
 
     product() {
       return this.$themeConfig.gitHubConfig[this.$lang].docsType
+    },
+
+    version() {
+      return this.$themeConfig.gitHubConfig[this.$lang].version
     },
   },
 
