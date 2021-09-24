@@ -18,10 +18,10 @@
       <ul v-if="versions.length" class="version-dropdown">
         <li v-for="(version, index) in versions" :key="index" class="dropdown-item">
           <a
-            :href="`/${$lang}/${docsType}/${version.value}/`"
-            :class="{ 'version-link': true, active: version.label.indexOf(currentVersion) !== -1 }"
+            :href="`/${$lang}/${docsType}/${version}/`"
+            :class="{ 'version-link': true, active: version.indexOf(currentVersion) !== -1 }"
           >
-            {{ version.label }}
+            {{ version }}
           </a>
         </li>
       </ul>
