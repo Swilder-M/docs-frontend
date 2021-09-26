@@ -132,8 +132,8 @@ code {
     background-color: $base-bg-color;
   }
 }
-a.sidebar-link.is-enterprise {
-  position: relative;
+a.sidebar-link.is-enterprise,
+.sidebar-heading.is-enterprise {
   &::after {
     content: 'Enterprise';
     margin-left: 4px;

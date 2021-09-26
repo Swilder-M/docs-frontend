@@ -16,10 +16,10 @@ export default {
       item.type === 'auto'
         ? selfActive || item.children.some(c => isActive($route, item.basePath + '#' + c.slug))
         : selfActive
-    const isEnterprise = item.frontmatter ? item.frontmatter.enterprise : undefined
+    const isEnterprise = (item.frontmatter ? item.frontmatter.enterprise : undefined) || item.enterprise
     const link =
       item.type === 'external'
-        ? renderExternal(h, item.path, item.title || item.path)
+        ? renderExternal(h, item.path, item.title || item.path, isEnterprise)
         : renderLink(h, item.path, item.title || item.path, active, null, isEnterprise)
 
     const maxDepth = [
@@ -81,7 +81,7 @@ function renderChildren(h, children, path, route, maxDepth, depth = 1) {
   )
 }
 
-function renderExternal(h, to, text) {
+function renderExternal(h, to, text, isEnterprise) {
   return h(
     'a',
     {
@@ -92,6 +92,7 @@ function renderExternal(h, to, text) {
       },
       class: {
         'sidebar-link': true,
+        'is-enterprise': isEnterprise,
       },
     },
     [text, h('OutboundLink')],
