@@ -1,0 +1,45 @@
+name: Deploy Docs Home Pages
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: clone frontend
+      uses: actions/checkout@v2
+
+    - name: use node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.15
+
+    - name: use python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.6'
+        architecture: 'x64'
+
+    - name: build docs
+      run: |
+        echo '{"cn": [], "en": []}' > docs/.vuepress/config/directory.json
+        rm README.md
+        yarn && yarn build
+
+    - name: upload dist
+      run: |
+        pip3 install coscmd
+        coscmd config -a ${{ secrets.COS_ID }} -s ${{ secrets.COS_KEY }} -b ${{ secrets.COS_NAME }} -e cos.accelerate.myqcloud.com
+        coscmd upload -r docs/.vuepress/dist/ /
+
+    - name: flush CDN
+      run: |
+        pip3 install tccli
+        tccli configure set secretId ${{ secrets.COS_ID }}
+        tccli configure set secretKey ${{ secrets.COS_KEY }}
+        tccli configure set region ${{ secrets.COS_REGION }}
+        tccli cdn PurgeUrlsCache --cli-unfold-argument --Urls https://docs.emqx.com/zh.html https://docs.emqx.com/en.html
