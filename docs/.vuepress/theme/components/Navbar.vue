@@ -3,7 +3,7 @@
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <div class="navbar-left">
-      <a class="home-link" :href="`https://www.emqx.com/${$lang}`" target="_blank" rel="noopener">
+      <a class="home-link" :href="`/${$lang}.html`">
         <img
           v-if="$site.themeConfig.logo"
           class="logo"
