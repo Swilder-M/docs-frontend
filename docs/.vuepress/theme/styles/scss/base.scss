@@ -813,6 +813,55 @@ div[class*='language-'].line-numbers-mode {
   }
 }
 
+// home page
+.home-page {
+  .navbar {
+    border-bottom: none;
+    .navbar-left {
+      border-right: none;
+    }
+  }
+  .main-box > .columns {
+    min-height: unset;
+  }
+  .search-box {
+    display: none;
+  }
+  .home-main {
+    #banner {
+      height: 360px;
+      padding: 64px 0;
+      background: url(~public/docs-images/home/banner-bg.png) no-repeat center/auto 100%,
+        linear-gradient(0deg, #f5f7fa 0%, #ffffff 100%);
+      h1 {
+        font-size: 40px;
+        font-weight: 600;
+        color: $text-strong-color;
+      }
+    }
+    #products {
+      margin-top: -100px;
+      padding-bottom: 320px;
+      .card {
+        height: 100%;
+        background: #fff;
+        box-shadow: 0px 4px 8px 0px rgba(43, 56, 95, 0.11);
+        border-radius: 8px;
+        h2 {
+          border-bottom: none;
+          color: $text-strong-color;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          color: $text-color;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
 /* IE CSS styles go here */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media (min-width: 719px) {

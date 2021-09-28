@@ -74,10 +74,18 @@ export default {
             const text = (themeLocales[path] && themeLocales[path].label) || locale.lang
             const products = this.$themeConfig.gitHubConfig[this.$lang].docsType
             let link
-            if (path === '/en/') {
-              link = `/en/${products}/latest/`
+            if (this.$page.frontmatter.home) {
+              if (path === '/en') {
+                link = '/en.html'
+              } else {
+                link = '/zh.html'
+              }
             } else {
-              link = `/zh/${products}/latest/`
+              if (path === '/en') {
+                link = `/en/${products}/latest/`
+              } else {
+                link = `/zh/${products}/latest/`
+              }
             }
             return { text, link }
           }),

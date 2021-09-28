@@ -130,7 +130,7 @@ module.exports = {
   ],
   themeConfig: {
     locales: {
-      '/en/': {
+      '/en': {
         lang: 'en',
         // 文档更新时间
         lastUpdated: 'last updated',
@@ -186,17 +186,15 @@ module.exports = {
   },
   postcss: [require('autoprefixer')],
   sass: { indentedSyntax: true },
-  title: 'EMQ Docs',
+  title: 'EMQ Documentation',
   locales: {
-    '/en/': {
+    '/en': {
       lang: 'en',
-      title: 'EMQ Docs',
-      description: 'EMQ Docs',
+      title: 'EMQ Documentation',
     },
     '/': {
       lang: 'zh',
-      title: 'EMQ Docs',
-      description: 'EMQ 使用文档',
+      title: 'EMQ 文档',
     },
   },
   markdown: {

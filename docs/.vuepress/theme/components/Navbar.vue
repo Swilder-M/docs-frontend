@@ -26,13 +26,19 @@
           <ul class="nav-dropdown" style="display: none;">
             <li class="dropdown-item">
               <!---->
-              <router-link :to="`/en/${product}/${version}/`" :class="{ 'nav-link': true, active: $lang === 'en' }">
+              <router-link
+                :to="$page.frontmatter.home ? '/en.html' : `/en/${product}/${version}/`"
+                :class="{ 'nav-link': true, active: $lang === 'en' }"
+              >
                 English
               </router-link>
             </li>
             <li class="dropdown-item">
               <!---->
-              <router-link :to="`/zh/${product}/${version}/`" :class="{ 'nav-link': true, active: $lang === 'zh' }">
+              <router-link
+                :to="$page.frontmatter.home ? '/zh.html' : `/zh/${product}/${version}/`"
+                :class="{ 'nav-link': true, active: $lang === 'zh' }"
+              >
                 中文
               </router-link>
             </li>

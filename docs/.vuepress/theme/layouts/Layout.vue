@@ -6,22 +6,24 @@
     <section class="main-box">
       <div class="columns is-mobile">
         <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
-          <template #top>
+          <template v-if="!isHomePage" #top>
             <VersionPick />
           </template>
           <template #bottom>
             <slot name="sidebar-bottom" />
           </template>
         </Sidebar>
-        <div class="column col-page">
-          <Home v-if="$page.frontmatter.home" />
-          <Page v-else :sidebar-items="sidebarItems" />
-        </div>
-        <RightSideBar />
+        <Home v-if="isHomePage" />
+        <template v-else>
+          <div class="column col-page">
+            <Page :sidebar-items="sidebarItems" />
+          </div>
+          <RightSideBar />
+        </template>
       </div>
       <Footer />
     </section>
-    <page-feedback />
+    <page-feedback v-if="!isHomePage" />
   </div>
 </template>
 
@@ -34,6 +36,7 @@ import VersionPick from '../components/VersionPick'
 import RightSideBar from '../components/RightSideBar'
 import Footer from '../components/Footer'
 import PageFeedback from '../components/pageFeedback.vue'
+import Home from '../components/Home.vue'
 
 export default {
   name: 'Layout',
@@ -46,6 +49,7 @@ export default {
     RightSideBar,
     Footer,
     PageFeedback,
+    Home,
   },
 
   data() {
@@ -65,6 +69,10 @@ export default {
   },
 
   computed: {
+    isHomePage() {
+      return this.$page.frontmatter.home
+    },
+
     shouldShowNavbar() {
       const { themeConfig } = this.$site
       const { frontmatter } = this.$page
