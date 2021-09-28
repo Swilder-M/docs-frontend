@@ -25,6 +25,8 @@ jobs:
         architecture: 'x64'
 
     - name: build docs
+      env:
+        DOCS_HOME: home
       run: |
         echo '{"cn": [], "en": []}' > docs/.vuepress/config/directory.json
         rm README.md
@@ -42,4 +44,4 @@ jobs:
         tccli configure set secretId ${{ secrets.COS_ID }}
         tccli configure set secretKey ${{ secrets.COS_KEY }}
         tccli configure set region ${{ secrets.COS_REGION }}
-        tccli cdn PurgeUrlsCache --cli-unfold-argument --Urls https://docs.emqx.com/zh.html https://docs.emqx.com/en.html
+        tccli cdn PurgeUrlsCache --cli-unfold-argument --Urls https://docs.emqx.com/zh/ https://docs.emqx.com/en/
