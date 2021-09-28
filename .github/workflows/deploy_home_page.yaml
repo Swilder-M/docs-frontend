@@ -45,3 +45,4 @@ jobs:
         tccli configure set secretKey ${{ secrets.COS_KEY }}
         tccli configure set region ${{ secrets.COS_REGION }}
         tccli cdn PurgeUrlsCache --cli-unfold-argument --Urls https://docs.emqx.com/zh/ https://docs.emqx.com/en/
+        tccli cdn PurgePathCache --cli-unfold-argument --Paths https://docs.emqx.com/docs-images/ --FlushType delete
