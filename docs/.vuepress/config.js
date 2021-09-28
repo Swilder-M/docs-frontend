@@ -128,6 +128,28 @@ module.exports = {
         },
       },
     ],
+    [
+      'seo',
+      {
+        siteTitle: (_, $site) => $site.title,
+        title: $page => $page.title,
+        description: $page => $page.frontmatter.description,
+        author: (_, $site) => $site.themeConfig.author,
+        twitterCard: _ => 'summary',
+        url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+        image: ($page, $site) =>
+          $page.frontmatter.image &&
+          (($site.themeConfig.domain && !$page.frontmatter.image.startsWith('http')) || '') + $page.frontmatter.image,
+        publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+        modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+        customMeta: (add, _context) => {
+          add('twitter:site', '@EMQTech')
+          add('twitter:creator', '@EMQTech')
+          add('twitter:image', 'https://www.emqx.com/images/logo_512.png')
+          add('twitter:image:alt', 'EMQ LOGO')
+        },
+      },
+    ],
   ],
   themeConfig: {
     locales: {
@@ -162,6 +184,7 @@ module.exports = {
         },
       },
     },
+    domain: 'https://docs.emqx.com',
     // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
     nextLinks: true,
     // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
