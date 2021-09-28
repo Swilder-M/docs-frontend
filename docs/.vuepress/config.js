@@ -13,6 +13,7 @@ const axiosBaseUrl =
 const { docsType, docName, version } = gitHubConfig.en
 const prefixEN = `/en/${docsType}/${version}/`
 const prefixZH = `/zh/${docsType}/${version}/`
+const docsHome = process.env.DOCS_HOME
 
 module.exports = {
   host: 'localhost',
@@ -86,7 +87,7 @@ module.exports = {
       {
         hostname: 'https://docs.emqx.com',
         exclude: ['/404.html'],
-        outFile: `sitemap_${docsType}_${version}.xml`,
+        outFile: docsHome ? 'sitemap_home.xml' : `sitemap_${docsType}_${version}.xml`,
       },
     ],
     [

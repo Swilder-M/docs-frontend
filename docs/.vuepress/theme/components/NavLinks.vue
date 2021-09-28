@@ -76,9 +76,9 @@ export default {
             let link
             if (this.$page.frontmatter.home) {
               if (path === '/en') {
-                link = '/en.html'
+                link = '/en/'
               } else {
-                link = '/zh.html'
+                link = '/zh/'
               }
             } else {
               if (path === '/en') {

@@ -3,7 +3,7 @@
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <div class="navbar-left">
-      <a class="home-link" :href="`/${$lang}.html`">
+      <a class="home-link" :href="`/${$lang}/`">
         <img
           v-if="$site.themeConfig.logo"
           class="logo"
@@ -27,7 +27,7 @@
             <li class="dropdown-item">
               <!---->
               <router-link
-                :to="$page.frontmatter.home ? '/en.html' : `/en/${product}/${version}/`"
+                :to="$page.frontmatter.home ? '/en/' : `/en/${product}/${version}/`"
                 :class="{ 'nav-link': true, active: $lang === 'en' }"
               >
                 English
@@ -36,7 +36,7 @@
             <li class="dropdown-item">
               <!---->
               <router-link
-                :to="$page.frontmatter.home ? '/zh.html' : `/zh/${product}/${version}/`"
+                :to="$page.frontmatter.home ? '/zh/' : `/zh/${product}/${version}/`"
                 :class="{ 'nav-link': true, active: $lang === 'zh' }"
               >
                 中文
