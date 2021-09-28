@@ -3,8 +3,8 @@
 @import './variable.scss';
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, sans-serif;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC,
+    Hiragino Sans GB, Microsoft YaHei, sans-serif;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -12,10 +12,6 @@ body {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   height: 100%;
-  &:lang(en) {
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC,
-      Hiragino Sans GB, Microsoft YaHei, sans-serif;
-  }
 }
 
 *,
@@ -527,8 +523,8 @@ div[class*='language-'].line-numbers-mode {
       align-items: center;
       justify-content: space-between;
       svg.icon {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
       }
       h2 {
         font-size: 18px;
@@ -537,6 +533,7 @@ div[class*='language-'].line-numbers-mode {
         border: none;
       }
       .dropdown-wrapper {
+        height: unset;
         padding-left: 2px;
         display: inline-block;
         position: relative;

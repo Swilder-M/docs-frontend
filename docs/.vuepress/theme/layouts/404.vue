@@ -19,9 +19,9 @@
 export default {
   data() {
     return {
-      backHomeLink: 'https://docs.emqx.com/zh/emqx/latest/',
-      backHome: '返回首页',
-      msg: '抱歉，你访问的页面不存在。',
+      backHomeLink: '/en/',
+      backHome: 'Take me home',
+      msg: "There's nothing here.",
       msgs: [
         `There's nothing here.`,
         `How did we get here?`,
@@ -32,10 +32,12 @@ export default {
   },
 
   mounted() {
-    if (this.$route.path.indexOf('/en/') !== -1) {
+    if (this.$route.path.includes('/zh/')) {
+      this.msg = '抱歉，你访问的页面不存在。'
+      this.backHome = '返回首页'
+      this.backHomeLink = '/zh/'
+    } else {
       this.msg = this.msgs[Math.floor(Math.random() * this.msgs.length)]
-      this.backHome = 'Take me home'
-      this.backHomeLink = 'https://docs.emqx.com/en/emqx/latest/'
     }
   },
 }

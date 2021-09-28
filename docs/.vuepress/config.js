@@ -31,7 +31,7 @@ module.exports = {
     ['meta', { property: 'og:url', content: 'https://docs.emqx.com/' }],
     ['meta', { property: 'og:title', content: 'EMQ Docs' }],
     ['meta', { property: 'og:image', content: 'https://www.emqx.com/images/logo_512.png' }],
-    ['script', { charset: 'utf-8', src: '//at.alicdn.com/t/font_2772539_vulpmpuyh1.js' }],
+    ['script', { charset: 'utf-8', src: '//at.alicdn.com/t/font_2772539_53dg8y6kl8y.js' }],
   ],
   plugins: [
     [
@@ -131,7 +131,7 @@ module.exports = {
   ],
   themeConfig: {
     locales: {
-      '/en': {
+      '/': {
         lang: 'en',
         // 文档更新时间
         lastUpdated: 'last updated',
@@ -145,7 +145,7 @@ module.exports = {
           [prefixEN]: directory.en,
         },
       },
-      '/': {
+      '/zh': {
         lang: 'zh',
         // 文档更新时间
         lastUpdated: '更新时间',
@@ -189,11 +189,11 @@ module.exports = {
   sass: { indentedSyntax: true },
   title: 'EMQ Documentation',
   locales: {
-    '/en': {
+    '/': {
       lang: 'en',
       title: 'EMQ Documentation',
     },
-    '/': {
+    '/zh': {
       lang: 'zh',
       title: 'EMQ 文档',
     },

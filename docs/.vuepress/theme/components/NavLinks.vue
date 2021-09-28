@@ -75,16 +75,16 @@ export default {
             const products = this.$themeConfig.gitHubConfig[this.$lang].docsType
             let link
             if (this.$page.frontmatter.home) {
-              if (path === '/en') {
-                link = '/en/'
-              } else {
+              if (path === '/zh') {
                 link = '/zh/'
+              } else {
+                link = '/en/'
               }
             } else {
-              if (path === '/en') {
-                link = `/en/${products}/latest/`
-              } else {
+              if (path === '/zh') {
                 link = `/zh/${products}/latest/`
+              } else {
+                link = `/en/${products}/latest/`
               }
             }
             return { text, link }
