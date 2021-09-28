@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
 dist
-docs/*
-!docs/*.md
+docs/*/*
+!docs/*/README.md
 !docs/.vuepress
 docs/.vuepress/public/api
 

@@ -17,7 +17,7 @@
               :placeholder="translations.emailAddress"
               @focus="clearError"
             />
-            <button :class="['button', 'is-gradient', 'px-5', { 'is-loading': loading }]" @click="newsLetter">
+            <button :class="['button', 'is-gradient', 'px-5', 'm-0', { 'is-loading': loading }]" @click="newsLetter">
               {{ translations.subscribe }} →
             </button>
             <p :class="{ 'sub-tips': true, 'm-0': true, 'is-error': isError, 'is-success': isSuccess }">
