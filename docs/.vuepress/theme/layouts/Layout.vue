@@ -104,6 +104,12 @@ export default {
     },
   },
 
+  created() {
+    if (typeof this.$ssrContext !== 'undefined') {
+      this.$ssrContext.userHeadTags += `<link rel='canonical' href='${this.computeURL()}'/>`
+    }
+  },
+
   mounted() {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
@@ -154,6 +160,12 @@ export default {
           this.toggleSidebar(false)
         }
       }
+    },
+
+    computeURL() {
+      const { domain } = this.$site.themeConfig
+      const pagePath = this.$page.path
+      return `${domain}${pagePath}`
     },
   },
 }
