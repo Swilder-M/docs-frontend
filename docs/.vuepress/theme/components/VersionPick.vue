@@ -1,7 +1,7 @@
 <template>
   <div class="version-pick">
     <router-link :to="`/${$lang}/${docsType}/${currentVersion}`" class="home-link">
-      <h2 class="title p-0">
+      <h2 class="title p-0 is-flex is-align-items-center">
         <svg class="icon" aria-hidden="true">
           <use :xlink:href="`#icon-${docsType}`"></use>
         </svg>
