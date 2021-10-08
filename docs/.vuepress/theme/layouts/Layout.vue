@@ -102,11 +102,23 @@ export default {
         userPageClass,
       ]
     },
+
+    product() {
+      return this.$themeConfig.gitHubConfig[this.$lang].docsType
+    },
+
+    version() {
+      return this.$themeConfig.gitHubConfig[this.$lang].version
+    },
   },
 
   created() {
     if (typeof this.$ssrContext !== 'undefined') {
-      this.$ssrContext.userHeadTags += `<link rel='canonical' href='${this.computeURL()}'/>`
+      this.$ssrContext.userHeadTags += `
+    <link rel="canonical" href="${this.computeURL()}>
+    <meta name="docsearch:language" content="${this.$lang}">
+    <meta name="docsearch:product" content="${this.product}">
+    <meta name="docsearch:version" content="${this.version}">`
     }
   },
 
