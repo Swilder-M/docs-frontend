@@ -115,7 +115,7 @@ export default {
   created() {
     if (typeof this.$ssrContext !== 'undefined') {
       this.$ssrContext.userHeadTags += `
-    <link rel="canonical" href="${this.computeURL()}>
+    <link rel="canonical" href="${this.computeURL()}">
     <meta name="docsearch:language" content="${this.$lang}">
     <meta name="docsearch:product" content="${this.product}">
     <meta name="docsearch:version" content="${this.version}">`
