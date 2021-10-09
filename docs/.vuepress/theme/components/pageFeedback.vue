@@ -113,6 +113,9 @@ export default {
     pageLike() {
       ga('send', 'event', 'page-useful', 'like', this.$route.path, 1)
       this.feedbackStatus = true
+      setTimeout(() => {
+        this.clearStatus()
+      }, 2000)
     },
 
     pageDislike() {
@@ -144,8 +147,11 @@ export default {
             headers: { 'Content-Language': this.$lang },
           },
         )
-        if (status === 200 && data.items.length) {
+        if (status === 200 && data) {
           this.feedbackStatus = true
+          setTimeout(() => {
+            this.clearStatus()
+          }, 2000)
         }
       } catch (error) {}
     },
