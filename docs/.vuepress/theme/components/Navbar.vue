@@ -46,7 +46,8 @@
         </div>
       </div>
     </div>
-    <SearchBox />
+    <!-- <SearchBox /> -->
+    <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
     <div
       class="links"
       :style="
@@ -67,8 +68,8 @@
 </template>
 
 <script>
-// import AlgoliaSearchBox from '@AlgoliaSearchBox'
-import SearchBox from '@SearchBox'
+import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox'
+// import SearchBox from '@SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 
@@ -78,8 +79,8 @@ export default {
   components: {
     SidebarButton,
     NavLinks,
-    SearchBox,
-    // AlgoliaSearchBox,
+    // SearchBox,
+    AlgoliaSearchBox,
   },
 
   data() {
@@ -90,7 +91,13 @@ export default {
 
   computed: {
     algolia() {
-      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+      return {
+        ...(this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}),
+        algoliaOptions: {
+          hitsPerPage: 10,
+          facetFilters: [`language:${this.$lang}`, `product:${this.product}`, `version:${this.version}`],
+        },
+      }
     },
 
     isAlgoliaSearch() {

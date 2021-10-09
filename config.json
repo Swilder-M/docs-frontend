@@ -1,0 +1,22 @@
+{
+  "index_name": "emq_docs",
+  "sitemap_urls": [
+    "https://docs.emqx.com/sitemap_emqx.xml",
+    "https://docs.emqx.com/sitemap_cloud.xml",
+    "https://docs.emqx.com/sitemap_neuron.xml",
+    "https://docs.emqx.com/sitemap_kuiper.xml",
+    "https://docs.emqx.com/sitemap_fabric.xml"
+  ],
+  "selectors": {
+    "lvl0": ".theme-default-content h1",
+    "lvl1": ".theme-default-content h2",
+    "lvl2": ".theme-default-content h3",
+    "lvl3": ".theme-default-content h4",
+    "lvl4": ".theme-default-content h5",
+    "lvl5": ".theme-default-content h6",
+    "text": ".theme-default-content p,.theme-default-content ul,.theme-default-content li,.theme-default-content ol"
+  },
+  "custom_settings": {
+    "attributesForFaceting": ["language", "product", "version"]
+  }
+}

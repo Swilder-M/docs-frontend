@@ -1,0 +1,7 @@
+User-agent: *
+
+Sitemap: https://docs.emqx.com/sitemap_emqx.xml
+Sitemap: https://docs.emqx.com/sitemap_cloud.xml
+Sitemap: https://docs.emqx.com/sitemap_neuron.xml
+Sitemap: https://docs.emqx.com/sitemap_kuiper.xml
+Sitemap: https://docs.emqx.com/sitemap_fabric.xml

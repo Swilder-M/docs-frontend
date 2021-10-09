@@ -47,13 +47,6 @@ module.exports = {
     'vuepress-plugin-element-tabs',
     'vuepress-plugin-smooth-scroll',
     [
-      'fulltext-search',
-      {
-        // provide the contents of a JavaScript file
-        hooks: fs.readFileSync(path.resolve(__dirname, './theme/util/searchHooks.js')),
-      },
-    ],
-    [
       '@snowdog/vuepress-plugin-pdf-export',
       {
         outputFileName: `${docName} ${version}.pdf`,
@@ -198,14 +191,17 @@ module.exports = {
     axiosBaseUrl,
     // 页脚设置
     footerConfig,
-    // 搜索最大数量
-    searchMaxSuggestions: 30,
     // Google Analytics
     googleAnalytics: {
       id: 'UA-145467055-1',
       // Type: Boolean
       // Turn on the development mode and disable the module.
       dev: true,
+    },
+    algolia: {
+      appId: '5LQNL5PKQG',
+      apiKey: '3f2fe3b91166377fa5292ef6babf8e9b',
+      indexName: 'emq_docs',
     },
   },
   postcss: [require('autoprefixer')],
@@ -265,7 +261,7 @@ module.exports = {
       .use('url-loader')
       .loader('url-loader')
       .options({
-        limit: 10000,
+        limit: 1000,
         name: 'docs-assets/img/[name].[hash:8].[ext]',
       })
 
@@ -282,7 +278,7 @@ module.exports = {
       .use('url-loader')
       .loader('url-loader')
       .options({
-        limit: 10000,
+        limit: 1000,
         name: 'docs-assets/fonts/[name].[hash:8].[ext]',
       })
 
