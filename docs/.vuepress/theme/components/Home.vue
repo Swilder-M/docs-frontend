@@ -48,7 +48,7 @@ export default {
           hitsPerPage: 10,
           facetFilters: [`language:${this.$lang}`],
         },
-        debug: true,
+        debug: process.env.NODE_ENV === 'development',
       }
     },
   },
