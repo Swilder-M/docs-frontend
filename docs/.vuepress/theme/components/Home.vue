@@ -2,7 +2,8 @@
   <main class="home-main column p-0">
     <section id="banner" class="has-text-centered">
       <div class="container">
-        <h1 v-if="data.banner && data.banner.title" class="m-0">{{ data.banner.title }}</h1>
+        <h1 v-if="data.banner && data.banner.title" class="mt-0 mb-5">{{ data.banner.title }}</h1>
+        <AlgoliaSearchBox :options="algolia" inputId="home-algolia-input" />
       </div>
     </section>
     <section v-if="data.products" id="products">
@@ -26,12 +27,29 @@
 </template>
 
 <script>
+import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox'
+
 export default {
   name: 'Home',
+
+  components: {
+    AlgoliaSearchBox,
+  },
 
   computed: {
     data() {
       return this.$page.frontmatter
+    },
+
+    algolia() {
+      return {
+        ...(this.$themeLocaleConfig.homeAlgolia || this.$site.themeConfig.homeAlgolia || {}),
+        algoliaOptions: {
+          hitsPerPage: 10,
+          facetFilters: [`language:${this.$lang}`],
+        },
+        debug: true,
+      }
     },
   },
 }

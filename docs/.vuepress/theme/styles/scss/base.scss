@@ -796,7 +796,7 @@ div[class*='language-'].line-numbers-mode {
   .main-box > .columns {
     min-height: unset;
   }
-  .search-box {
+  .navbar .search-box {
     display: none;
   }
   .home-main {
@@ -809,6 +809,36 @@ div[class*='language-'].line-numbers-mode {
         font-size: 40px;
         font-weight: 600;
         color: $text-strong-color;
+      }
+      .algolia-autocomplete {
+        display: block !important;
+      }
+      #home-algolia-input {
+        width: 80%;
+        height: 52px;
+        max-width: calc(100% - 24px);
+        padding: 0 2.25rem 0 0.5rem;
+        margin-right: 0;
+        background: #fff url(~public/docs-images/search.png) no-repeat right 16px center/1rem;
+        box-shadow: 0px 2px 2px 0px rgba(43, 56, 95, 0.09);
+        border-radius: 8px;
+        border: 1px solid rgba(231, 229, 238, 0.31);
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-color;
+      }
+      .algolia-autocomplete .ds-dropdown-menu {
+        min-width: 200px;
+        padding: 8px 12px;
+        box-shadow: 0px 2px 2px 0px rgba(43, 56, 95, 0.09);
+        border: 1px solid rgba(231, 229, 238, 0.31);
+        border-radius: 8px;
+        left: 0 !important;
+        right: 0 !important;
+        margin: auto !important;
+        &:before {
+          border-color: rgba(231, 229, 238, 0.31);
+        }
       }
     }
     #products {

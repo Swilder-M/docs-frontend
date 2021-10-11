@@ -47,7 +47,7 @@
       </div>
     </div>
     <!-- <SearchBox /> -->
-    <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
+    <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" inputId="navbar-algolia-input" />
     <div
       class="links"
       :style="
