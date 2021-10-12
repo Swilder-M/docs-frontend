@@ -35,7 +35,7 @@ jobs:
     - name: upload dist
       run: |
         pip3 install coscmd
-        coscmd config -a ${{ secrets.COS_ID }} -s ${{ secrets.COS_KEY }} -b ${{ secrets.COS_NAME }} -e cos.accelerate.myqcloud.com
+        coscmd config -a ${{ secrets.COS_ID }} -s ${{ secrets.COS_KEY }} -b ${{ secrets.COS_NAME }} -r ${{ secrets.COS_REGION }} -e cos.accelerate.myqcloud.com
         coscmd upload -r docs/.vuepress/dist/ /
 
     - name: flush CDN
