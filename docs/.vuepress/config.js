@@ -203,11 +203,6 @@ module.exports = {
       apiKey: '3f2fe3b91166377fa5292ef6babf8e9b',
       indexName: 'emq_docs',
     },
-    homeAlgolia: {
-      appId: '5LQNL5PKQG',
-      apiKey: '79d95717e649fb69b3812def5ec29ce8',
-      indexName: 'global_emq_docs',
-    },
   },
   postcss: [require('autoprefixer')],
   sass: { indentedSyntax: true },

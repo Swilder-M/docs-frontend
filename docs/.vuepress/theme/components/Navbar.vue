@@ -94,8 +94,8 @@ export default {
       return {
         ...(this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}),
         algoliaOptions: {
-          hitsPerPage: 10,
-          facetFilters: [`language:${this.$lang}`, `product:${this.product}`, `version:${this.version}`],
+          hitsPerPage: 20,
+          facetFilters: [`language:${this.$lang}`, `product:${this.product}`],
         },
         debug: process.env.NODE_ENV === 'development',
       }

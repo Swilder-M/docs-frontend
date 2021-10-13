@@ -56,14 +56,7 @@ export default {
               algoliaOptions,
             ),
             handleSelected: (input, event, suggestion) => {
-              if (this.isHomePage) {
-                window.location.href = suggestion.url
-              } else {
-                const { pathname, hash } = new URL(suggestion.url)
-                const routepath = pathname.replace(this.$site.base, '/')
-                const _hash = decodeURIComponent(hash)
-                this.$router.push(`${routepath}${_hash}`)
-              }
+              window.location.href = suggestion.url
             },
           }),
         )
