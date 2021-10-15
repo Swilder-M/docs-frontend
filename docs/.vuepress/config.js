@@ -199,9 +199,9 @@ module.exports = {
       dev: true,
     },
     algolia: {
-      appId: '5LQNL5PKQG',
-      apiKey: '3f2fe3b91166377fa5292ef6babf8e9b',
-      indexName: 'emq_docs',
+      appId: process.env.ALGOLIA_APPID || 'BQE6L1ZKBW',
+      apiKey: process.env.ALGOLIA_APPKEY || '01a3aba56f903ae5cbfd52f50e62342c',
+      indexName: process.env.ALGOLIA_INDEXNAME || 'emq_docs',
     },
   },
   postcss: [require('autoprefixer')],
